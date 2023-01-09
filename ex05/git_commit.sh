@@ -1,1 +1,1 @@
-git log --pretty="format:%H" -5
+git log --pretty="format:%H" -5 | awk '{print $1}'
