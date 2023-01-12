@@ -6,13 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 12:22:44 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/12 12:26:16 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/12 12:37:12 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int		idx;
 
