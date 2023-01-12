@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:52:34 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/12 14:37:54 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/12 15:35:30 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,12 @@ void	ft_putnbr(int nb)
 {
 	if (nb < 0)
 	{
-		ft_printnbr('-');	
+		ft_printnbr('-');
+		if (nb == -2147483648)
+		{
+			ft_printnbr('2');
+			nb = -147483648;
+		}
 		ft_putnbr(-nb);
 	}
 	else if (nb >= 10)
