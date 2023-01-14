@@ -6,7 +6,7 @@
 /*   By: jaebjung <jaebjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:58:49 by jaebjung          #+#    #+#             */
-/*   Updated: 2023/01/14 15:16:43 by jaebjung         ###   ########.fr       */
+/*   Updated: 2023/01/14 15:20:55 by jaebjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,9 @@ void	rush(int x, int y)
 		{
 			if ((!i && !j) || (i == y - 1 && j == x - 1 && i > 0 && j > 0))
 				ft_putchar('/');
-			else if ((i == 0 && j == x - 1) || (i == y - 1 && j == 0))
+			else if ((!i && j == x - 1) || (i == y - 1 && !j))
 				ft_putchar('\\');
-			else if ((i == 0 || i == y - 1) || (j == 0 || j == x - 1))
+			else if ((!i || i == y - 1) || (!j || j == x - 1))
 				ft_putchar('*');
 			else
 				ft_putchar(' ');
