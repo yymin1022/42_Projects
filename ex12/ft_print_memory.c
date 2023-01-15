@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_print_memory.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/12 21:09:10 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/14 23:01:27 by yonyoo           ###   ########.fr       */
+/*   Created: 2023/01/14 21:31:25 by yonyoo            #+#    #+#             */
+/*   Updated: 2023/01/14 21:36:23 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+void	*ft_print_memory(void *addr, unsigned int size)
 {
-	unsigned int	idx;
+	printf("%p\n%p\n%d", &addr, addr, size);
+	return addr;
+}
 
-	idx = 0;
-	while (*(src + idx) && idx < n)
-	{
-		*(dest + idx) = *(src + idx);
-		idx++;
-	}
-	while (idx < sizeof(dest) && idx < n)
-	{
-		*(dest + idx) = '\0';
-		idx++;
-	}
-	return (dest);
+int main(){
+	void* asdf = ft_print_memory;
+	ft_print_memory(asdf, 10);
+	return 0;
 }
