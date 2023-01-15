@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 18:58:11 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/15 14:16:05 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/15 17:48:08 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,31 @@ void	ft_print_hex(int n)
 	int		b;
 
 	a = n / 16;
-	b = n % 16;
 	tmp = a + '0';
+	if (a > 9)
+		tmp = a - 10 + 'a';
 	write(1, "\\", 1);
 	write(1, &tmp, 1);
-	if (b < 9)
-		tmp = b + '0';
-	else
-		tmp = b + 'a' - 10;
+	b = n % 16;
+	tmp = b + '0';
+	if (b > 9)
+		tmp = b - 10 + 'a';
 	write(1, &tmp, 1);
 }
 
 void	ft_putstr_non_printable(char *str)
 {
-	int	idx;
+	int				idx;
+	unsigned char	*str2;
 
 	idx = 0;
-	while (*(str + idx))
+	str2 = (unsigned char *)str;
+	while (*(str2 + idx))
 	{
-		if (*(str + idx) >= 32 && *(str + idx) <= 126)
-			write(1, str + idx, 1);
+		if (*(str2 + idx) >= 32 && *(str2 + idx) <= 126)
+			write(1, str2 + idx, 1);
 		else
-			ft_print_hex(*(str + idx));
+			ft_print_hex(*(str2 + idx));
 		idx++;
 	}
 }
