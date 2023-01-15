@@ -6,12 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 18:58:11 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/14 21:00:29 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/15 13:57:01 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 void	ft_print_hex(int n)
 {
@@ -38,14 +37,10 @@ void	ft_putstr_non_printable(char *str)
 	idx = 0;
 	while (*(str + idx))
 	{
-		if (*(str + idx) <= 31 || *(str + idx) == 127)
-		{
-			ft_print_hex (*(str + idx));
-		}
-		else
-		{
+		if (*(str + idx) >= 32 && *(str + idx) <= 126)
 			write(1, str + idx, 1);
-		}
+		else
+			ft_print_hex(*(str + idx));
 		idx++;
 	}
 }
