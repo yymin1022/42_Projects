@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 22:27:07 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/15 13:55:24 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/15 16:26:07 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_str_is_printable(char *str)
 	idx = 0;
 	while (*(str + idx))
 	{
-		if (*(str + idx) < 32 && (*(str + idx)) > 126)
+		if (*(str + idx) < 32 || (*(str + idx)) > 126)
 			return (0);
 		idx++;
 	}
