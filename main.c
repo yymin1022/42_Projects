@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 10:10:17 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/14 13:54:04 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/14 16:19:14 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@ extern void	rush(int x, int y);
 int	main(void)
 {
 	rush (5, 3);
+	rush (5, 1);
+	rush (1, 3);
+	rush (5, 0);
+	rush (0, 5);
 	rush (-1, 3);
 	rush (5, -1);
 	rush (-1, -1);
