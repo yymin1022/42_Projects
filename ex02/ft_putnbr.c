@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 19:37:11 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/16 19:57:48 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/16 20:06:45 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,4 @@ void	ft_putnbr(int nb)
 	{
 		ft_print(nb + '0');
 	}
-}
-
-int main(){
-	int tmp = 12345678;
-	ft_putnbr(tmp);
-	write(1, " ", 1);
-	tmp = 2147483647;
-	ft_putnbr(tmp);
-	write(1, " ", 1);
-	tmp = -2147483648;
-	ft_putnbr(tmp);
 }
