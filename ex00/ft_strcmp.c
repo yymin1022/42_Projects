@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 19:24:48 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/16 13:51:31 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/16 16:30:54 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strcmp(char *s1, char *s2)
 	idx = 0;
 	while (*(s1 + idx) && *(s2 + idx) && *(s1 + idx) == *(s2 + idx))
 	{
-	   idx++;	
+		idx++;
 	}
 	return (*(s1 + idx) - *(s2 + idx));
 }
