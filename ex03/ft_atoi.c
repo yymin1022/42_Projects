@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 20:10:31 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/16 23:00:24 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/17 11:39:00 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@ void	check_heading(char *str, int *idx, int *sign)
 {
 	while (*(str + *idx))
 	{
-		if (*(str + *idx) == '+' || *(str + *idx) == ' ')
+		if (*(str + *idx) == 32 || (*(str + *idx) >= 9 && *(str + *idx) <= 13))
+			(*idx)++;
+		else
+			break ;
+	}
+	while (*(str + *idx))
+	{
+		if (*(str + *idx) == '+')
 			(*idx)++;
 		else if (*(str + *idx) == '-')
 		{
