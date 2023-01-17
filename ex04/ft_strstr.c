@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:35:54 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/16 18:33:56 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/17 10:27:31 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ char	*ft_strstr(char *str, char *to_find)
 			return (str + i);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
