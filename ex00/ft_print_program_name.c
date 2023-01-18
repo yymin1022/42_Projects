@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:13:39 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/18 13:21:16 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/18 22:02:34 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_putchar(char *c)
 {
 	while (*c)
 		write(1, c++, 1);
+	write(1, "\n", 1);
 }
 
 int	main(int argc, char **argv)
