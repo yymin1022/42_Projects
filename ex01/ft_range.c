@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 22:23:27 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/18 22:29:28 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/18 22:36:27 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	*ft_range(int min, int max)
 	int	idx;
 	int	*arr;
 
-	arr = malloc(sizeof(int) * (max - min));
+	arr = (int *)malloc(sizeof(int) * (max - min));
 	idx = 0;
 	while (idx < max - min)
 	{
