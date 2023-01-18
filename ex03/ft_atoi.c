@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 20:10:31 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/17 11:39:00 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/18 13:02:29 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_atoi(char *str)
 			ans += *(str + idx) - '0';
 		}
 		else
-			break;
+			break ;
 		idx++;
 	}
 	return (ans * sign);
