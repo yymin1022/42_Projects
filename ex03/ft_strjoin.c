@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 11:54:02 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/19 16:36:54 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/20 20:15:21 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,12 @@ char	*ft_make_str(char *result, int size, char **strs, char *sep)
 	int	idx;
 
 	idx = 0;
+	*result = '\0';
 	while (idx < size)
 	{
-		result = ft_strcat(result, *(strs + idx));
+		ft_strcat(result, *(strs + idx));
 		if (idx < size - 1)
-			result = ft_strcat(result, sep);
+			ft_strcat(result, sep);
 		idx++;
 	}
 	return (result);
@@ -75,7 +76,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		idx++;
 	}
 	mem_size += ft_strlen(sep) * (size - 1);
-	result = (char *)malloc(sizeof(char) * mem_size + 1);
+	result = (char *)malloc(sizeof(char) * (mem_size + 1));
 	if (result == 0)
 		return (0);
 	result = ft_make_str(result, size, strs, sep);
