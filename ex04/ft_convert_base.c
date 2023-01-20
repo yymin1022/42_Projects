@@ -6,12 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 20:15:01 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/19 21:51:46 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/20 22:23:31 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int		ft_check_base(char *base);
 int		ft_get_base(char cur, char *base);
@@ -55,18 +54,17 @@ void	ft_putnbr(long long nbr, char *base, int base_len, char *result)
 		is_minus = 1;
 		nbr *= -1;
 	}
-	while (nbr >= 10)
+	while (nbr >= base_len)
 	{
-		if (nbr >= base_len)
-		{
-			*(result + idx) = *(base + (nbr % base_len));
-			idx++;
-			nbr /= base_len;
-		}
+		*(result + idx) = *(base + (nbr % base_len));
+		idx++;
+		nbr /= base_len;
 	}
 	*(result + idx) = *(base + nbr);
 	if (is_minus)
+	{
 		*(result + idx + 1) = '-';
+	}
 	*(result + idx + 2) = '\0';
 }
 
@@ -76,7 +74,7 @@ char	*ft_putnbr_base(long long nbr, char *base)
 	int			base_len;
 
 	base_len = ft_check_base(base);
-	result = malloc(sizeof(char) * 12);
+	result = malloc(sizeof(char) * 34);
 	ft_putnbr(nbr, base, base_len, result);
 	return (result);
 }
