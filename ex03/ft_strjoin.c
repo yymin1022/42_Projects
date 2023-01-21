@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 11:54:02 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/20 20:15:21 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 20:48:50 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	if (result == 0)
 		return (0);
 	result = ft_make_str(result, size, strs, sep);
+	*(result + mem_size) = '\0';
 	return (result);
 }
