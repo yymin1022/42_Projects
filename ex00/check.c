@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:38:19 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 16:26:39 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 17:03:37 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,33 +34,34 @@ int	check_arg(char *arg)
 	return (1);
 }
 
-int	check_col_dup(int **board, int col, int val)
+int	check_col_dup(int **board, int idx, int val)
 {
 	int	i;
 
 	i = 1;
-	while (i < 5)
+	while (i < idx / 4 + 1)
 	{
-		if (board[i][col] == 0)
+		if (board[i][idx % 4 + 1] == 0)
 			return (1);
-		if (board[i][col] == val)
+		if (board[i][idx % 4 + 1] == val)
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int	check_row_dup(int **board, int row, int val)
+int	check_row_dup(int **board, int idx, int val)
 {
 	int	i;
 
 	i = 1;
-	while (i < 5)
+	while (i < idx % 4 + 1)
 	{
-		if (board[row][i] == 0)
+		if (board[idx / 4 + 1][i] == 0)
 			return (1);
-		if (board[row][i] == val)
+		if (board[idx / 4 + 1][i] == val)
 			return (0);
+		i++;
 	}
 	return (1);
 }
@@ -165,9 +166,13 @@ int	check_board(int **board)
 	while (idx < 5)
 	{
 		if (!check_col_up(board, idx) || !check_col_down(board, idx))
+		{
 			return (0);
+		}
 		if (!check_row_left(board, idx) || !check_row_right(board, idx))
+		{
 			return (0);
+		}
 		idx++;
 	}
 	return (1);

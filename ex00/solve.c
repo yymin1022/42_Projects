@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 15:03:19 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 16:29:46 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 17:12:17 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,18 @@ int	solve(int **board, int idx)
 	int	j;
 	int	tmp;
 
-	if (idx == 16 && check_board(board))
-		return (1);
+	if (idx == 16)
+	{
+		if (check_board(board))
+			return (1);
+		return (0);
+	}
 	i = idx / 4 + 1;
 	j = idx % 4 + 1;
 	tmp = 1;
 	while (tmp <= 4)
 	{
-		if (check_col_dup(board, j, tmp) && check_row_dup(board, i, tmp))
+		if (check_col_dup(board, idx, tmp) && check_row_dup(board, idx, tmp))
 		{
 			board[i][j] = tmp;
 			if (solve(board, idx + 1))
