@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   solve.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 11:26:33 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 15:27:23 by yonyoo           ###   ########.fr       */
+/*   Created: 2023/01/21 15:03:19 by yonyoo            #+#    #+#             */
+/*   Updated: 2023/01/21 15:30:16 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush_header.h"
 
-int	main(int argc, char **argv)
+int	solve(int **board, int idx)
 {
-	int	**board;
+	int	i;
+	int	j;
 	int	tmp;
 
-	if (argc != 2)
+	if (idx == 16)
 	{
-		ft_puterr(0);
+		if(check_board(board))
+			return (1);
 		return (0);
 	}
-	if (!check_arg(argv[1]))
+	i = idx / 4 + 1;
+	j = idx % 4 + 1;
+	tmp = 1;
+	while (tmp <= 4)
 	{
-		ft_puterr(0);
-		return (0);
-	}
-	tmp = 0;
-	board = (int **)malloc(sizeof(int *) * 6);
-	while (tmp < 6)
-	{
-		board[tmp] = (int *)malloc(sizeof(int) * 6);
+		board[i][j] = tmp;
+		if (check_col(board, j) && check_row(board, i))
+			solve(board, idx + 1);
 		tmp++;
 	}
-	init_board(board, argv[1]);
-	solve(board, 0);
 	return (0);
 }
