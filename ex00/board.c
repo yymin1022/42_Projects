@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:54:14 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 14:38:39 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 15:51:59 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ void	print_board(int **board)
 	int	i;
 	int	j;
 
-	i = 0;
-	while (i < 6)
+	i = 1;
+	while (i < 5)
 	{
-		j = 0;
-		while (j < 6)
+		j = 1;
+		while (j < 5)
 		{
 			ft_putchar(board[i][j] + '0');
 			j++;
