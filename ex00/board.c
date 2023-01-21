@@ -6,12 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:54:14 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 14:00:16 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 14:28:33 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
+#include "rush_header.h"
 
 void	init_board_side(int **board, char *arg)
 {

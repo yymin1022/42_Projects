@@ -6,11 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 13:28:15 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 13:29:13 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 14:28:51 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "rush_header.h"
 
 void	ft_putchar(char c)
 {

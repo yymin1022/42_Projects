@@ -6,11 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:38:19 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 12:50:55 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 14:29:16 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "rush_header.h"
 
 int	check_arg(char *arg)
 {
