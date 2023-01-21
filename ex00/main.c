@@ -6,13 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:26:33 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 14:29:00 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 14:38:53 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush_header.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int	**board;
 	int	tmp;

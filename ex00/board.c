@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:54:14 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 14:28:33 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 14:38:39 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	init_board_side(int **board, char *arg)
 	}
 }
 
-void	init_board(int **board,  char *arg)
+void	init_board(int **board, char *arg)
 {
 	int	i;
 	int	j;
