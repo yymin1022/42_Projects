@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   util.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 11:26:33 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 12:53:59 by yonyoo           ###   ########.fr       */
+/*   Created: 2023/01/21 11:38:19 by yonyoo            #+#    #+#             */
+/*   Updated: 2023/01/21 12:50:55 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	check_arg(char *arg);
-void	init_board(int **board, char *arg);
-void	print_err(int err);
+#include <unistd.h>
 
-int main(int argc, char **argv)
+int	check_arg(char *arg)
 {
-	int	board[6][6];
+	int	idx;
 
-	if (argc != 2)
+	idx = 0;
+	while (arg[idx])
 	{
-		print_err(0);
-		return (0);
+		if (idx % 2 == 0)
+		{
+			if (!(arg[idx] >= '1' && arg[idx] <= '4'))
+				return (0);
+		}
+		else
+		{
+			if (arg[idx] != ' ')
+				return (0);
+		}
+		idx++;
 	}
-	if (!check_arg(argv[1]))
-	{
-		print_err(0);
-		return (0);
-	}
-	init_board(board, argv[1]);
-	return (0);
+	return (1);
+}
+
+void	print_err(int err)
+{
+	write(2, "Error: ", 7);
+	if (err == 0)
+		write(2, "Invalid Argument", 16);
+	write(2, "\n", 1);
 }
