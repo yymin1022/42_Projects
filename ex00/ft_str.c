@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 13:28:15 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 18:35:42 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 18:37:08 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_putstr(char *str)
 	}
 }
 
-int		ft_puterr(int err)
+int	ft_puterr(int err)
 {
 	write(2, "Error: ", 7);
 	if (err == 0)
