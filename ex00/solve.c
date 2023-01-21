@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 15:03:19 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 15:49:24 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 15:53:08 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	solve(int **board, int idx)
 	while (tmp <= 4)
 	{
 		board[i][j] = tmp;
-		if (check_col(board, j) && check_row(board, i))
+		if (check_col_dup(board, j) && check_row_dup(board, i))
 		{
 			if (solve(board, idx + 1))
 				return (1);

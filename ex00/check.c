@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:38:19 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 15:46:51 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 15:52:48 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	check_board(int **board)
 	return (1);
 }
 
-int	check_col(int **board, int col)
+int	check_col_dup(int **board, int col)
 {
 	int	i;
 	int	j;
@@ -62,7 +62,7 @@ int	check_col(int **board, int col)
 	return (1);
 }
 
-int	check_row(int **board, int row)
+int	check_row_dup(int **board, int row)
 {
 	int	i;
 	int	j;
