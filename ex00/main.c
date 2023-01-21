@@ -6,11 +6,10 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:26:33 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 15:50:31 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 16:18:45 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "rush_header.h"
 
 int	main(int argc, char **argv)

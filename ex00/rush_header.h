@@ -6,13 +6,14 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 14:25:47 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 15:53:24 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 16:19:13 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RUSH_HEADER_H
 # define RUSH_HEADER_H
 # include <stdlib.h>
+# include <stdio.h>
 # include <unistd.h>
 
 int		check_arg(char *arg);
