@@ -6,13 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 10:26:42 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 19:34:30 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 21:07:25 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_sqrt(int nb)
 {
-	int	x;
+	long long	x;
 
 	if (nb < 0)
 		return (-1);
