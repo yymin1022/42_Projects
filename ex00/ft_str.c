@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 13:28:15 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 14:48:55 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 15:51:20 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ void	ft_puterr(int err)
 	write(2, "Error: ", 7);
 	if (err == 0)
 		write(2, "Invalid Argument", 16);
+	else if (err == 0)
+		write(2, "Failed to Find Solution", 23);
 	write(2, "\n", 1);
 }

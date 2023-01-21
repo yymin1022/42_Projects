@@ -6,10 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:26:33 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 15:27:23 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 15:50:31 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "rush_header.h"
 
 int	main(int argc, char **argv)
@@ -35,6 +36,9 @@ int	main(int argc, char **argv)
 		tmp++;
 	}
 	init_board(board, argv[1]);
-	solve(board, 0);
+	if (solve(board, 0))
+		print_board(board);
+	else
+		ft_puterr(1);
 	return (0);
 }

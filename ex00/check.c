@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:38:19 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 15:27:54 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 15:46:51 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int	check_arg(char *arg)
 
 int	check_board(int **board)
 {
-	return (board[0][0]);
+	board[0][0] = 0;
+	return (1);
 }
 
 int	check_col(int **board, int col)
