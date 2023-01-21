@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 14:25:47 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 14:49:47 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 14:53:56 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <unistd.h>
 
 int		check_arg(char *arg);
+int		check_board(int **board);
+int		check_col(int **board);
+int		check_row(int **board);
 void	ft_putchar(char c);
 void	ft_puterr(int err);
 void	ft_putstr(char *str);
