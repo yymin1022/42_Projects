@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:38:19 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 14:52:23 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/21 15:02:38 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,42 @@ int	check_board(int **board)
 	return (board[0][0]);
 }
 
-int	check_col(int **board)
+int	check_col(int **board, int col)
 {
-	return (board[0][0]);
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < 5)
+	{
+		if (board[i][col] == 0)
+			return (1);
+		j = i + 1;
+		while (j < 5)
+		{
+			if (board[i][col] == board[j][col])
+				return (0);
+		}
+	}
+	return (1);
 }
 
-int	check_row(int **board)
+int	check_row(int **board, int row)
 {
-	return (board[0][0]);
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < 5)
+	{
+		if (board[row][i] == 0)
+			return (1);
+		j = i + 1;
+		while (j < 5)
+		{
+			if (board[row][i] == board[row][j])
+				return (0);
+		}
+	}
+	return (1);
 }
