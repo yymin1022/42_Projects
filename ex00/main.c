@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:26:33 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 18:36:36 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/22 19:17:17 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int	main(int argc, char **argv)
 		print_board(board);
 	else
 		return (ft_puterr(1));
+	free(board);
 	return (0);
 }
