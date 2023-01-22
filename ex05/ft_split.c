@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:12:05 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/19 19:52:45 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/22 09:48:08 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*ft_get_str(char *str, char *charset)
 	len = 0;
 	while (*(str + len) && !ft_check_sep(*(str + len), charset))
 		len++;
-	tmp = (char *)malloc(sizeof(char) * len);
+	tmp = (char *)malloc(sizeof(char) * (len + 1));
 	idx = 0;
 	while (idx < len)
 	{
