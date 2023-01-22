@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 10:26:42 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 21:07:25 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/22 11:35:57 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@ int	ft_sqrt(int nb)
 {
 	long long	x;
 
-	if (nb < 0)
-		return (-1);
 	x = 0;
 	while (x * x <= nb)
 	{
