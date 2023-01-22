@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:26:33 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/22 19:17:17 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/22 21:24:51 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,13 @@ int	main(int argc, char **argv)
 		return (ft_puterr(0));
 	tmp = 0;
 	board = (int **)malloc(sizeof(int *) * 6);
+	if (board == 0)
+		return (ft_puterr(2));
 	while (tmp < 6)
 	{
 		board[tmp] = (int *)malloc(sizeof(int) * 6);
+		if (board[tmp] == 0)
+			return (ft_puterr(2));
 		tmp++;
 	}
 	init_board(board, argv[1]);
