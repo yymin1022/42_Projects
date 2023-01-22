@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 19:40:40 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/21 20:30:14 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/22 11:29:00 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,5 @@ int	ft_ten_queens_puzzle(void)
 
 	cnt = 0;
 	solve(result, &cnt, 0);
-
-	printf("%d", cnt);
-	
 	return (cnt);
 }
