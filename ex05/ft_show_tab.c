@@ -6,11 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:11:51 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/23 13:34:15 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/23 14:15:11 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_stock_str.h"
+#include <unistd.h>
 
 void	ft_putnbr(int n)
 {
@@ -49,8 +49,11 @@ void	ft_show_tab(struct s_stock_str *par)
 	while (*(par + idx)->str)
 	{
 		ft_putstr((par + idx)->str);
+		ft_putstr("\n");
 		ft_putnbr((par + idx)->size);
+		ft_putstr("\n");
 		ft_putstr((par + idx)->copy);
+		ft_putstr("\n");
 		idx++;
 	}
 }
