@@ -6,11 +6,9 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 12:11:01 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/12 12:13:14 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/23 15:54:02 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 void	ft_swap(int *a, int *b)
 {
