@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 20:15:01 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/20 22:23:31 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/23 09:57:52 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char	*ft_putnbr_base(long long nbr, char *base)
 	int			base_len;
 
 	base_len = ft_check_base(base);
-	result = malloc(sizeof(char) * 34);
+	result = malloc(sizeof(char) * 100);
 	ft_putnbr(nbr, base, base_len, result);
 	return (result);
 }
