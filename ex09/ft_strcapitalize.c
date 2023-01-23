@@ -6,11 +6,9 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 12:22:57 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/15 17:46:23 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/23 10:39:57 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 int	is_alpha_num(char str)
 {

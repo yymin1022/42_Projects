@@ -6,11 +6,9 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 22:27:07 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/15 17:44:25 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/23 10:39:32 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 int	ft_str_is_printable(char *str)
 {

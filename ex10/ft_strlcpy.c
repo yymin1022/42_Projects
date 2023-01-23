@@ -6,11 +6,9 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 12:46:45 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/15 21:25:47 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/23 10:40:01 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {

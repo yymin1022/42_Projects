@@ -6,11 +6,9 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 12:19:21 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/14 12:21:52 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/23 10:39:43 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 char	*ft_strlowcase(char *str)
 {

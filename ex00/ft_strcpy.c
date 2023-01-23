@@ -6,11 +6,9 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 19:39:29 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/12 21:09:55 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/23 10:38:49 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 char	*ft_strcpy(char *dest, char *src)
 {

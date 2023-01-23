@@ -6,13 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 21:28:54 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/12 21:40:51 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/23 10:39:04 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_str_is_alpha(char *str)
+Int	ft_str_is_alpha(char *str)
 {
 	int	idx;
 
