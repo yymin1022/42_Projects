@@ -6,11 +6,12 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 19:33:20 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/23 19:12:28 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/23 21:44:51 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "ft_stock_str.h"
 
 int	ft_strlen(char *str)
 {
