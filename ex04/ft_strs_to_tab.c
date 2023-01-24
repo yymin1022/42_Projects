@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 19:33:20 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/23 21:44:51 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/24 11:50:56 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	int			idx;
 	t_stock_str	*arr;
 
+	if (ac < 0)
+		ac = 0;
 	arr = (t_stock_str *)malloc(sizeof(t_stock_str) * (ac + 1));
 	if (arr == 0)
 		return (0);
