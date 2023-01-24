@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:11:51 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/24 13:15:35 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/24 21:06:59 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_show_tab(struct s_stock_str *par)
 	int	idx;
 
 	idx = 0;
-	while (*(par + idx)->str)
+	while ((par + idx)->str)
 	{
 		ft_putstr((par + idx)->str);
 		ft_putstr("\n");
