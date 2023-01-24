@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 19:33:20 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/24 11:50:56 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/24 21:24:52 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		(arr + idx)->copy = ft_strdup(*(av + idx));
 		idx++;
 	}
-	(arr + idx)->str = "\0";
+	(arr + idx)->str = 0;
 	return (arr);
 }
