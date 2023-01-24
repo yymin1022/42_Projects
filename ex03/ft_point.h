@@ -6,14 +6,14 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 19:23:55 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/22 19:29:15 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/24 11:48:32 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_POINT_H
 # define FT_POINT_H
 
-typedef struct e_t_point {
+typedef struct s_t_point {
 	int	x;
 	int	y;
 }t_point;
