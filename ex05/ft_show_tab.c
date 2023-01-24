@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:11:51 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/24 21:06:59 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/24 21:21:43 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	ft_putstr(char *str)
 		write(1, str + idx, 1);
 		idx++;
 	}
-	write(1, "\n", 1);
 }
 
 void	ft_show_tab(struct s_stock_str *par)
