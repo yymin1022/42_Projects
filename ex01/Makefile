@@ -1,8 +1,8 @@
 CC=cc
 CFLAGS=-Wall -Wextra -Werror
 
-INCLUDE_DIR=./includes/
-SRCS=./srcs/ft_putchar.c ./srcs/ft_putstr.c ./srcs/ft_strcmp.c ./srcs/ft_strlen.c ./srcs/ft_swap.c
+INCLUDE_DIR=includes/
+SRCS=srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_strcmp.c srcs/ft_strlen.c srcs/ft_swap.c
 OBJECT=$(SRCS:.c=.o)
 TARGET=libft.a
 
