@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 22:23:32 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/26 21:23:07 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/26 21:45:15 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int	calc_num(int num1, int num2, int op)
 
 int	get_num(char *str)
 {
-	int			idx;
-	int			sign;
+	int	idx;
+	int	sign;
 	int	result;
 
 	idx = 0;

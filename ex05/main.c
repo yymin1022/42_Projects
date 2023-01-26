@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:18:28 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/26 21:23:15 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/26 21:45:08 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	int	num1;
 	int	num2;
-	int			op;
+	int	op;
 
 	if (argc != 4)
 		return (-1);
