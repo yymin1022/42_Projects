@@ -6,13 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 22:23:32 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/26 18:56:22 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/26 21:23:07 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "doop.h"
 
-void	ft_putnbr(long long num)
+void	ft_putnbr(int num)
 {
 	char	result[100];
 	int		idx;
@@ -41,7 +41,7 @@ void	ft_putnbr(long long num)
 	ft_putstr(ft_strrev(result));
 }
 
-long long	calc_num(long long num1, long long num2, int op)
+int	calc_num(int num1, int num2, int op)
 {
 	if (op == 0)
 		return (num1 + num2);
@@ -54,11 +54,11 @@ long long	calc_num(long long num1, long long num2, int op)
 	return (num1 % num2);
 }
 
-long long	get_num(char *str)
+int	get_num(char *str)
 {
 	int			idx;
 	int			sign;
-	long long	result;
+	int	result;
 
 	idx = 0;
 	while ((*(str + idx) >= 9 && *(str + idx) <= 13) || *(str + idx) == ' ')

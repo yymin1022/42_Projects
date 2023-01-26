@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:18:28 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/26 19:00:13 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/26 21:23:15 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	long long	num1;
-	long long	num2;
+	int	num1;
+	int	num2;
 	int			op;
 
 	if (argc != 4)
