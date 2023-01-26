@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 22:30:41 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/26 18:17:03 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/26 18:58:52 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_strlen(char *str)
 	return (idx);
 }
 
-void	ft_strrev(char *str)
+char	*ft_strrev(char *str)
 {
 	char	tmp;
 	int		idx;
@@ -39,9 +39,11 @@ void	ft_strrev(char *str)
 		*(str + size - idx - 1) = tmp;
 		idx++;
 	}
+	return (str);
 }
 
 void	ft_putstr(char *str)
 {
 	write(1, str, ft_strlen(str));
+	write(1, "\n", 1);
 }

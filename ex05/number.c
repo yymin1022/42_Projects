@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 22:23:32 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/26 18:16:00 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/26 18:56:22 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,12 @@ void	ft_putnbr(long long num)
 	}
 	*(result + idx) = (num % 10) + '0';
 	if (is_minus)
+	{
 		*(result + idx + 1) = '-';
-	*(result + idx + 2) = '\0';
-	ft_strrev(result);
-	ft_putstr(result);
+		idx++;
+	}
+	*(result + idx + 1) = '\0';
+	ft_putstr(ft_strrev(result));
 }
 
 long long	calc_num(long long num1, long long num2, int op)
