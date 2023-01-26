@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:27:14 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/25 18:49:11 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/26 21:44:42 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_sort_string_tab(char **tab)
 	i = 0;
 	while (*(tab + i) != 0)
 	{
-		j = i + 1;
+		j = 0;
 		while (*(tab + j) != 0)
 		{
 			if (ft_strcmp(*(tab + i), *(tab + j)) > 0)
