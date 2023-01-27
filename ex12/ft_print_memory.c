@@ -6,11 +6,22 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 21:31:25 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/22 14:05:10 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/27 19:01:25 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	ft_print_data_space(int idx)
+{
+	while (idx < 16)
+	{
+		if (idx % 2 == 0)
+			write(1, " ", 1);
+		write(1, "  ", 2);
+		idx++;
+	}
+}
 
 void	ft_print_data_hex(unsigned char *addr)
 {
@@ -32,11 +43,8 @@ void	ft_print_data_hex(unsigned char *addr)
 			break ;
 		idx++;
 	}
-	while (idx <= 16)
-	{
-		write(1, " ", 1);
-		idx++;
-	}
+	ft_print_data_space(idx);
+	write(1, " ", 1);
 }
 
 void	ft_print_data_value(unsigned char *addr)
