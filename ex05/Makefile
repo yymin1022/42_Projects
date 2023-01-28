@@ -16,3 +16,8 @@ all: $(TARGET)
 
 clean:
 	rm -f $(OBJECT)
+
+fclean: clean
+	rm -rf $(TARGET)
+
+re: fclean all
