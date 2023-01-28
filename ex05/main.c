@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:18:28 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/26 21:45:08 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/28 11:06:49 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int	main(int argc, char **argv)
 			ft_putstr("Stop : modulo by zero");
 		return (-1);
 	}
-	ft_putnbr(calc_num(num1, num2, op));
+	ft_putnbr((long long)calc_num(num1, num2, op));
 	return (0);
 }

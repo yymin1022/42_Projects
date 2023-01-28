@@ -2,7 +2,7 @@ CC=cc
 CFLAGS=-Wall -Wextra -Werror
 
 INCLUDE=doop.h
-SRCS=main.c number.c str.c
+SRCS=main.c number.c operator.c str.c
 OBJECT=$(SRCS:.c=.o)
 TARGET=do-op
 

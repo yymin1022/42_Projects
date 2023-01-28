@@ -6,17 +6,17 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 22:23:32 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/01/26 21:45:15 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/28 11:06:33 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "doop.h"
 
-void	ft_putnbr(int num)
+void	ft_putnbr(long long num)
 {
-	char	result[100];
-	int		idx;
-	int		is_minus;
+	char		result[100];
+	int			idx;
+	int			is_minus;
 
 	is_minus = 0;
 	if (num < 0)
@@ -41,17 +41,22 @@ void	ft_putnbr(int num)
 	ft_putstr(ft_strrev(result));
 }
 
+int	calc_operator(int num1, int num2, int (*op)(int, int))
+{
+	return (op(num1, num2));
+}
+
 int	calc_num(int num1, int num2, int op)
 {
 	if (op == 0)
-		return (num1 + num2);
+		return (calc_operator(num1, num2, &plus));
 	else if (op == 1)
-		return (num1 - num2);
+		return (calc_operator(num1, num2, &minus));
 	else if (op == 2)
-		return (num1 * num2);
+		return (calc_operator(num1, num2, &multiply));
 	else if (op == 3)
-		return (num1 / num2);
-	return (num1 % num2);
+		return (calc_operator(num1, num2, &division));
+	return (calc_operator(num1, num2, &modulo));
 }
 
 int	get_num(char *str)
