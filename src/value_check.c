@@ -6,11 +6,11 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:35:43 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/29 10:46:11 by sangylee         ###   ########.fr       */
+/*   Updated: 2023/01/30 09:47:59 by sangylee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bsq_header.h"
+#include "../includes/bsq_header.h"
 
 int	check_min(int x, int y, int d)
 {

@@ -6,11 +6,11 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:28:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/29 10:46:24 by sangylee         ###   ########.fr       */
+/*   Updated: 2023/01/30 09:55:31 by sangylee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bsq_header.h"
+#include "../includes/bsq_header.h"
 
 int	find_max(int (*t)[29], int row, int col)
 {
@@ -81,7 +81,7 @@ void	draw_answer(char (*tab)[29], t_point pt, int max_value, char c)
 	}
 }
 
-void	print_answer(int (*tab)[29], char (*board)[29], t_point t, char c)
+int	print_answer(int (*tab)[29], char (*board)[29], t_point t, char c)
 {
 	int		max_value;
 	int		i;
@@ -89,6 +89,8 @@ void	print_answer(int (*tab)[29], char (*board)[29], t_point t, char c)
 	t_point	pt;
 
 	max_value = find_max(tab, t.x, t.y);
+	if (max_value == 0)
+		return (0);
 	pt = find_answer(tab, t.x, t.y);
 	draw_answer(board, pt, max_value, c);
 	i = 1;
@@ -104,4 +106,5 @@ void	print_answer(int (*tab)[29], char (*board)[29], t_point t, char c)
 		write(1, "\n", 1);
 	}
 	write(1, "\n", 1);
+	return (1);
 }
