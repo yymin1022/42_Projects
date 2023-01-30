@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:37:03 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/30 14:52:00 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/30 20:45:49 by sangylee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,16 @@ int		find_max(int **t, int row, int col);
 t_point	find_answer(int **tab, int row, int col);
 void	draw_answer(char **tab, t_point pt, int max_value, char c);
 int		print_answer(int **tab, char **board, t_point t, char c);
+
+//get.c
+int		get_size(char *str);
+int		get_col(char *str);
+int		get_row(char *str, int len);
+char	*get_info(char *str);
+
+//board.c
+char	*ft_strncpy(char *dest, char *src, int n);
+void	init_arr(char **map_char, int **map_cnt, int row, int col);
+void	init_board(char *file_name, char **map_char, int col, int size_data);
+void	init_cnt(char **map_char, int **map_cnt, char *file_info, t_point pt);
 #endif
