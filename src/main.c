@@ -6,19 +6,18 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/30 21:19:47 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/30 21:24:33 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/bsq_header.h"
 
-int	ft_print_err(int err)
+void	ft_print_err(int err)
 {
 	if (err == 1)
 		write(2, "Map Error\n", 10);
 	else if (err == 2)
 		write(2, "No Answer\n", 10);
-	return (-1);
 }
 
 int	get_result(char *file_name)
