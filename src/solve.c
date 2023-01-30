@@ -6,13 +6,13 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:28:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/30 09:55:31 by sangylee         ###   ########.fr       */
+/*   Updated: 2023/01/30 14:52:39 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/bsq_header.h"
 
-int	find_max(int (*t)[29], int row, int col)
+int	find_max(int **t, int row, int col)
 {
 	int	min_max[2];
 	int	i;
@@ -34,7 +34,7 @@ int	find_max(int (*t)[29], int row, int col)
 	return (min_max[1]);
 }
 
-t_point	find_answer(int (*tab)[29], int row, int col)
+t_point	find_answer(int **tab, int row, int col)
 {
 	int		max_value;
 	int		i;
@@ -63,7 +63,7 @@ t_point	find_answer(int (*tab)[29], int row, int col)
 	return (res);
 }
 
-void	draw_answer(char (*tab)[29], t_point pt, int max_value, char c)
+void	draw_answer(char **tab, t_point pt, int max_value, char c)
 {
 	int	i;
 	int	j;
@@ -81,7 +81,7 @@ void	draw_answer(char (*tab)[29], t_point pt, int max_value, char c)
 	}
 }
 
-int	print_answer(int (*tab)[29], char (*board)[29], t_point t, char c)
+int	print_answer(int **tab, char **board, t_point t, char c)
 {
 	int		max_value;
 	int		i;
