@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:35:43 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/30 14:49:51 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/30 19:48:22 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	check_min(int x, int y, int d)
 {
-	if (x < y && x < d)
+	if (x <= y && x <= d)
 		return (x);
-	else if (y < x && y < d)
+	else if (y <= x && y <= d)
 		return (y);
 	else
 		return (d);

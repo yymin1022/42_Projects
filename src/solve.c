@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:28:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/30 14:52:39 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/30 19:49:46 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ int	print_answer(int **tab, char **board, t_point t, char c)
 		while (j < t.y - 1)
 		{
 			write(1, &board[i][j], 1);
+			write(1, " ", 1);
 			j++;
 		}
 		i++;

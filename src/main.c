@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/30 16:17:02 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/30 19:43:22 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,22 @@ int	get_col(char *str)
 	return (len);
 }
 
+char	*ft_strncpy(char *dest, char *src, int n)
+{
+	int	idx;
+
+	*(src) = '.';
+	idx = 1;
+	while (*(src + idx) && idx < n + 1)
+	{
+		*(dest + idx) = *(src + idx);
+		idx++;
+	}
+	*(dest + idx) = '.';
+	*(dest + idx + 1) = '\0';
+	return (dest);
+}
+
 char	*get_info(char *str)
 {
 	int		fd;
@@ -82,26 +98,64 @@ long long	get_row(char *str, int	len)
 	return (res);
 }
 
-void	malloc_board(int **map_cnt, char **map_char, long long row, long long col)
+void	init_arr(char **map_char, int **map_cnt, long long row, long long col)
 {
-	char	*file_buf;
-	int		i;
-	int		j;
-	int		file_read;
+	int	i;
+	int	j;
 
-	map_char = (char **)malloc(sizeof(char *) * row);
-	map_cnt = (int **)malloc(sizeof(int *) * row);
 	i = 0;
 	while (i < row)
 	{
-		*(map_char + i) = (char *)malloc(sizeof(char) * col);
-		*(map_cnt + i) = (int *)malloc(sizeof(int) * col);
+		*(map_char + i) = (char *)malloc(sizeof(char) * row);
+		*(map_cnt + i) = (int *)malloc(sizeof(int) * row);
+		j = 0;
+		while (j < col)
+		{
+			*(*(map_char + i) + j) = '.';
+			*(*(map_cnt + i) + j) = 0;
+			j++;
+		}
 		i++;
 	}
-	file_read = open(str, O_RDONLY);
-	while (0 < read(file_read, file_buf, col + 1))
+}
+
+void	init_board(char *file_name, char **map_char, long long col, int size_data)
+{
+	char	*file_buf;
+	int		i;
+	int		file_read;
+
+	file_buf = (char *)malloc(sizeof(char) * (col));
+	file_read = open(file_name, O_RDONLY);
+	read(file_read, file_buf, size_data);
+	i = 1;
+	while (0 < read(file_read, file_buf, col - 1))
 	{
-			
+		ft_strncpy(*(map_char + i), file_buf, col);
+		i++;
+	}
+}
+
+void	convert_arr(char **map_char, int **map_cnt, char *file_info, long long row, long long col)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < row - 1)
+	{
+		j = 1;
+		while (j < col - 1)
+		{
+			if (map_char[i][j] == file_info[0])
+				map_cnt[i][j] = 0;
+			else if (map_char[i][j] == file_info[1])
+				map_cnt[i][j] = -1;
+			else
+				printf("ERROR MAP\n");
+			j++;
+		}
+		i++;
 	}
 }
 
@@ -126,8 +180,12 @@ int	main(int argc, char **argv)
 		file_info = get_info(file_name);
 		size_data = get_size(file_name);
 		printf("%s\n", file_info);
-		t_point	cord = {get_row(file_info, size_data - 3), get_col(file_name)};
-		malloc_board(map_cnt, map_char, cord.x, cord.y);
+		t_point	cord = {get_row(file_info, size_data - 3) + 2, get_col(file_name) + 2};
+		map_char = (char **)malloc(sizeof(char *) * cord.x);
+		map_cnt = (int **)malloc(sizeof(int *) * cord.x);
+		init_arr(map_char, map_cnt, cord.x, cord.y);
+		init_board(file_name, map_char, cord.y, size_data);
+		convert_arr(map_char, map_cnt, file_info + size_data - 3, cord.x, cord.y);
 		if (!print_answer(map_cnt, map_char, cord, 'x'))
 		{
 			write(2, "no\n", 3);
