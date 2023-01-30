@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:18:41 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/30 20:24:58 by sangylee         ###   ########.fr       */
+/*   Updated: 2023/01/30 21:14:47 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	init_board(char *file_name, char **map_char, int col, int size_data)
 	}
 }
 
-void	init_cnt(char **map_char, int **map_cnt, char *file_info, t_point pt)
+int	init_cnt(char **map_char, int **map_cnt, char *file_info, t_point pt)
 {
 	int	i;
 	int	j;
@@ -82,9 +82,10 @@ void	init_cnt(char **map_char, int **map_cnt, char *file_info, t_point pt)
 			else if (map_char[i][j] == file_info[1])
 				map_cnt[i][j] = -1;
 			else
-				printf("ERROR MAP\n");
+				return (0);
 			j++;
 		}
 		i++;
 	}
+	return (1);
 }

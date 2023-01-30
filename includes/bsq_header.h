@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:37:03 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/30 20:45:49 by sangylee         ###   ########.fr       */
+/*   Updated: 2023/01/30 21:19:02 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*get_info(char *str);
 
 //board.c
 char	*ft_strncpy(char *dest, char *src, int n);
+int		init_cnt(char **map_char, int **map_cnt, char *file_info, t_point pt);
 void	init_arr(char **map_char, int **map_cnt, int row, int col);
 void	init_board(char *file_name, char **map_char, int col, int size_data);
-void	init_cnt(char **map_char, int **map_cnt, char *file_info, t_point pt);
 #endif
