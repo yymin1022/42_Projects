@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/31 19:16:55 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/31 21:43:25 by sangylee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_print_err(int err)
 	if (err == 1)
 		write(2, "Map Error\n", 10);
 	else if (err == 2)
-		write(2, "No Answer\n", 10);
+		write(2, "Error\n", 6);
 }
 
 void	free_memory(int	**map_cnt, char **map_char, char *file_info)
@@ -43,8 +43,15 @@ int	get_result(char *file_name)
 	map_cnt = (int **)malloc(sizeof(int *) * cord.x);
 	init_arr(map_char, map_cnt, cord.x, cord.y);
 	init_board(file_name, map_char, cord.y, size_data);
+	printf("%d %d %d\n", cord.x, cord.y, size_data);
 	if (!init_cnt(map_char, map_cnt, file_info + size_data - 3, cord))
 	{
+		for(int i = 0; i < cord.x; i++)
+		{
+			for(int j = 0; j < cord.y; j++)
+				printf("%c", map_char[i][j]);
+			printf("\n");
+		}
 		free_memory(map_cnt, map_char, file_info);
 		return (-1);
 	}
@@ -52,6 +59,12 @@ int	get_result(char *file_name)
 	{
 		free_memory(map_cnt, map_char, file_info);
 		return (-2);
+	}
+	for(int i = 0; i < cord.x; i++)
+	{
+		for(int j = 0; j < cord.y; j++)
+			printf("%d ", map_cnt[i][j]);
+		printf("\n");
 	}
 	return (0);
 }

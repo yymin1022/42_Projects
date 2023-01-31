@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:18:41 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/31 11:50:26 by sangylee         ###   ########.fr       */
+/*   Updated: 2023/01/31 21:43:34 by sangylee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	init_arr(char **map_char, int **map_cnt, int row, int col)
 		j = 0;
 		while (j < col)
 		{
-			*(*(map_char + i) + j) = ' ';
+			*(*(map_char + i) + j) = '.';
 			*(*(map_cnt + i) + j) = 0;
 			j++;
 		}
