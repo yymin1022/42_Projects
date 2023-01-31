@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:28:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/30 21:24:06 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/31 12:55:05 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,5 @@ int	print_answer(int **tab, char **board, t_point t, char c)
 		i++;
 		write(1, "\n", 1);
 	}
-	write(1, "\n", 1);
 	return (1);
 }
