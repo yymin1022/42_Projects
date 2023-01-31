@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/31 12:01:55 by sangylee         ###   ########.fr       */
+/*   Updated: 2023/01/31 19:16:55 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,25 +56,57 @@ int	get_result(char *file_name)
 	return (0);
 }
 
+void	get_result_stdin(void)
+{
+	char	buf[15];
+	char	c;
+	int		fd;
+	int		idx;
+	int		row_cnt;
+
+	fd = open("tmp_map", O_WRONLY | O_TRUNC | O_CREAT, 0644);
+	read(0, buf, 15);
+	idx = 0;
+	while (*(buf + idx) != '\n')
+		idx++;
+	write(fd, buf, idx);
+	write(fd, "\n", 1);
+	row_cnt = get_row(buf, idx - 3);
+	idx = 0;
+	while (idx < row_cnt)
+	{
+		read(0, &c, 1);
+		write(fd, &c, 1);
+		if (c == '\n')
+			idx++;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	int	idx;
+	int	is_stdin;
 	int	result;
 
+	is_stdin = 0;
 	if (argc < 2)
 	{
-		printf("No Input\n");
-		return (0);
+		get_result_stdin();
+		is_stdin = 1;
 	}
 	idx = 1;
-	while (idx < argc)
+	while (idx < argc || is_stdin)
 	{
-		result = get_result(argv[idx]);
+		if (is_stdin)
+			result = get_result("tmp_map");
+		else
+			result = get_result(argv[idx++]);
 		if (result == -1)
 			ft_print_err(1);
 		else if (result == -2)
 			ft_print_err(2);
-		idx++;
+		if (is_stdin)
+			break ;
 	}
 	return (0);
 }
