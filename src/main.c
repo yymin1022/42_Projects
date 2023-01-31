@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/30 21:24:33 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/01/31 12:01:55 by sangylee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@ void	ft_print_err(int err)
 		write(2, "Map Error\n", 10);
 	else if (err == 2)
 		write(2, "No Answer\n", 10);
+}
+
+void	free_memory(int	**map_cnt, char **map_char, char *file_info)
+{
+	free(map_cnt);
+	free(map_char);
+	free(file_info);
 }
 
 int	get_result(char *file_name)
@@ -37,9 +44,15 @@ int	get_result(char *file_name)
 	init_arr(map_char, map_cnt, cord.x, cord.y);
 	init_board(file_name, map_char, cord.y, size_data);
 	if (!init_cnt(map_char, map_cnt, file_info + size_data - 3, cord))
+	{
+		free_memory(map_cnt, map_char, file_info);
 		return (-1);
-	if (!print_answer(map_cnt, map_char, cord, 'x'))
+	}
+	if (!print_answer(map_cnt, map_char, cord, file_info[size_data - 1]))
+	{
+		free_memory(map_cnt, map_char, file_info);
 		return (-2);
+	}
 	return (0);
 }
 
