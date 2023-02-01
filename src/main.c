@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 18:16:44 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 19:49:26 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,11 @@ int	get_result(char *file_name)
 	map_cnt = (int **)malloc(sizeof(int *) * cord.x);
 	init_map(map_char, map_cnt, cord.x, cord.y);
 	if (init_map_char(file_name, map_char, cord.y, size_data) != cord.x - 2
-		|| !init_map_cnt(map_char, map_cnt, map_info + size_data - 3, cord))
+		|| !init_map_cnt(map_char, map_cnt, map_info + size_data - 3, cord)
+		|| !print_answer(map_cnt, map_char, cord, map_info[size_data - 1]))
 	{
 		free_memory(map_char, map_cnt, map_info, cord);
 		return (-1);
-	}
-	if (!print_answer(map_cnt, map_char, cord, map_info[size_data - 1]))
-	{
-		free_memory(map_char, map_cnt, map_info, cord);
-		return (-2);
 	}
 	return (0);
 }
@@ -89,7 +85,7 @@ int	main(int argc, char **argv)
 		else
 			result = get_result(argv[idx++]);
 		if (result < 0)
-			print_err(result * -1);
+			write(2, "map error\n", 10);
 		if (is_stdin)
 			break ;
 		else if (idx < argc)

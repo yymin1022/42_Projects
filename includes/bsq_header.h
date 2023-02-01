@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:37:03 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 17:52:45 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 19:50:03 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,5 @@ void	check_val(int **t, int i, int j, int *min_max);
 void	draw_answer(char **tab, t_point pt, int max_value, char c);
 void	free_memory(char **map_char, int **map_cnt, char *info, t_point pt);
 void	init_map(char **map_char, int **map_cnt, int row, int col);
-void	print_err(int err);
 t_point	find_answer(int **tab, int row, int col);
 #endif

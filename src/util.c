@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 11:07:26 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/02/01 17:52:47 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 19:49:17 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,4 @@ void	free_memory(char **map_char, int **map_cnt, char *map_info, t_point pt)
 	free(map_char);
 	free(map_cnt);
 	free(map_info);
-}
-
-void	print_err(int err)
-{
-	if (err == 1)
-		write(2, "Map Error\n", 10);
-	else if (err == 2)
-		write(2, "Error\n", 6);
 }
