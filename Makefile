@@ -1,6 +1,6 @@
 NAME = bsq
 INCLUDE = includes/
-SRCS = src/board.c src/get.c src/main.c src/solve.c src/value_check.c
+SRCS = src/board.c src/get.c src/main.c src/solve.c src/util.c src/value_check.c
 OBJS = $(SRCS:.c=.o)
 CC = cc
 CFLAGS = -Wall -Werror -Wextra

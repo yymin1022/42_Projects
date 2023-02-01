@@ -6,29 +6,13 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:18:41 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 10:11:30 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 11:16:41 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/bsq_header.h"
+#include "bsq_header.h"
 
-char	*ft_strncpy(char *dest, char *src, int n)
-{
-	int	idx;
-
-	*(dest) = '.';
-	idx = 1;
-	while (*(src + idx - 1) && idx < n + 1)
-	{
-		*(dest + idx) = *(src + idx - 1);
-		idx++;
-	}
-	*(dest + idx) = '.';
-	*(dest + idx + 1) = '\0';
-	return (dest);
-}
-
-void	init_arr(char **map_char, int **map_cnt, int row, int col)
+void	init_map(char **map_char, int **map_cnt, int row, int col)
 {
 	int	i;
 	int	j;
@@ -49,7 +33,7 @@ void	init_arr(char **map_char, int **map_cnt, int row, int col)
 	}
 }
 
-void	init_board(char *file_name, char **map_char, int col, int size_data)
+void	init_map_char(char *file_name, char **map_char, int col, int size_data)
 {
 	char	*file_buf;
 	int		i;
@@ -66,7 +50,7 @@ void	init_board(char *file_name, char **map_char, int col, int size_data)
 	}
 }
 
-int	init_cnt(char **map_char, int **map_cnt, char *file_info, t_point pt)
+int	init_map_cnt(char **map_char, int **map_cnt, char *file_info, t_point pt)
 {
 	int	i;
 	int	j;

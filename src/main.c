@@ -6,19 +6,11 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 10:19:34 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 11:19:32 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/bsq_header.h"
-
-void	ft_print_err(int err)
-{
-	if (err == 1)
-		write(2, "Map Error\n", 10);
-	else if (err == 2)
-		write(2, "Error\n", 6);
-}
 
 void	free_memory(int	**map_cnt, char **map_char, char *file_info)
 {
@@ -41,9 +33,9 @@ int	get_result(char *file_name)
 	cord.y = get_col(file_name) + 2;
 	map_char = (char **)malloc(sizeof(char *) * cord.x);
 	map_cnt = (int **)malloc(sizeof(int *) * cord.x);
-	init_arr(map_char, map_cnt, cord.x, cord.y);
-	init_board(file_name, map_char, cord.y, size_data);
-	if (!init_cnt(map_char, map_cnt, file_info + size_data - 3, cord))
+	init_map(map_char, map_cnt, cord.x, cord.y);
+	init_map_char(file_name, map_char, cord.y, size_data);
+	if (!init_map_cnt(map_char, map_cnt, file_info + size_data - 3, cord))
 	{
 		free_memory(map_cnt, map_char, file_info);
 		return (-1);
@@ -102,9 +94,9 @@ int	main(int argc, char **argv)
 		else
 			result = get_result(argv[idx++]);
 		if (result == -1)
-			ft_print_err(1);
+			print_err(1);
 		else if (result == -2)
-			ft_print_err(2);
+			print_err(2);
 		if (is_stdin)
 			break ;
 		write(1, "\n", 1);
