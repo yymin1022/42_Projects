@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 10:07:26 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 10:19:34 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ int	main(int argc, char **argv)
 			ft_print_err(2);
 		if (is_stdin)
 			break ;
+		write(1, "\n", 1);
 	}
 	return (0);
 }
