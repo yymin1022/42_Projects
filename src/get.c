@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:22:03 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 14:39:09 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 14:50:01 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ char	*get_info(char *str)
 	fd = open(str, O_RDONLY);
 	read(fd, info, buffer);
 	close(fd);
-	if ((str[buffer - 1] == str[buffer - 2])
-		|| (str[buffer - 1] == str[buffer - 3])
-		|| (str[buffer - 2] == str[buffer - 3]))
+	if ((info[buffer - 1] == info[buffer - 2])
+		|| (info[buffer - 1] == info[buffer - 3])
+		|| (info[buffer - 2] == info[buffer - 3]))
 		info[0] = '\0';
 	return (info);
 }
