@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:18:41 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 18:16:55 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 20:11:53 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	init_map_char(char *file_name, char **map_char, int col, int size_data)
 		ft_strncpy(*(map_char + i), file_buf, col - 2);
 		i++;
 	}
+	free(file_buf);
 	return (i - 1);
 }
 

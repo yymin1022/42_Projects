@@ -6,11 +6,21 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 19:49:26 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 20:14:53 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq_header.h"
+
+int	check_info(char *map_info, int size_data)
+{
+	if (!(*map_info) || get_row(map_info, size_data - 3) == 0)
+	{
+		free(map_info);
+		return (0);
+	}
+	return (1);
+}
 
 int	get_result(char *file_name)
 {
@@ -22,7 +32,7 @@ int	get_result(char *file_name)
 
 	map_info = get_info(file_name);
 	size_data = get_size(file_name);
-	if (!(*map_info) || get_row(map_info, size_data - 3) == 0)
+	if (!check_info(map_info, size_data))
 		return (-1);
 	cord.x = get_row(map_info, size_data - 3) + 2;
 	cord.y = get_col(file_name) + 2;
@@ -36,6 +46,7 @@ int	get_result(char *file_name)
 		free_memory(map_char, map_cnt, map_info, cord);
 		return (-1);
 	}
+	free_memory(map_char, map_cnt, map_info, cord);
 	return (0);
 }
 
@@ -63,6 +74,7 @@ void	get_result_stdin(void)
 		if (c == '\n')
 			idx++;
 	}
+	close(fd);
 }
 
 int	main(int argc, char **argv)
