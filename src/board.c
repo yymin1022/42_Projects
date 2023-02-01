@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:18:41 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 15:11:00 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 15:44:57 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int	init_map_char(char *file_name, char **map_char, int col, int size_data)
 	while (0 < read(file_read, file_buf, col - 1))
 	{
 		ft_strncpy(*(map_char + i), file_buf, col - 2);
+		if (!check_printable((unsigned char)*(map_char + i)))
+			return (-1);
 		i++;
 	}
 	return (i - 1);

@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:37:03 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 15:10:23 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 15:44:59 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_point
 }	t_point;
 
 int		check_min(int x, int y, int d);
+int		check_printable(unsigned char c);
 int		find_max(int **t, int row, int col);
 int		get_col(char *str);
 int		get_row(char *str, int len);
