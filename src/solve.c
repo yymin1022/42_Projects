@@ -6,11 +6,11 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:28:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 10:17:37 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 13:06:04 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/bsq_header.h"
+#include "bsq_header.h"
 
 int	find_max(int **t, int row, int col)
 {

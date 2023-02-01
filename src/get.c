@@ -6,11 +6,11 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:22:03 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 10:20:09 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 13:05:51 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/bsq_header.h"
+#include "bsq_header.h"
 
 int	get_size(char *str)
 {

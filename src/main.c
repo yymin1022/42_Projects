@@ -6,11 +6,11 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 12:17:52 by sangylee         ###   ########.fr       */
+/*   Updated: 2023/02/01 13:05:57 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/bsq_header.h"
+#include "bsq_header.h"
 
 int	get_result(char *file_name)
 {
