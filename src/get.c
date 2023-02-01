@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:22:03 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 13:46:19 by sangylee         ###   ########.fr       */
+/*   Updated: 2023/02/01 14:14:03 by sangylee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	get_row(char *str, int len)
 
 	res = 0;
 	i = 0;
-	while (i < len)
+	while (i < len && (str[i] >= '0' && str[i] <= '9'))
 	{
 		res = res * 10;
 		res += str[i] - '0';
