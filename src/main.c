@@ -6,18 +6,11 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 11:19:32 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 11:22:34 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/bsq_header.h"
-
-void	free_memory(int	**map_cnt, char **map_char, char *file_info)
-{
-	free(map_cnt);
-	free(map_char);
-	free(file_info);
-}
 
 int	get_result(char *file_name)
 {
@@ -37,12 +30,12 @@ int	get_result(char *file_name)
 	init_map_char(file_name, map_char, cord.y, size_data);
 	if (!init_map_cnt(map_char, map_cnt, file_info + size_data - 3, cord))
 	{
-		free_memory(map_cnt, map_char, file_info);
+		free_memory(map_char, map_cnt, file_info);
 		return (-1);
 	}
 	if (!print_answer(map_cnt, map_char, cord, file_info[size_data - 1]))
 	{
-		free_memory(map_cnt, map_char, file_info);
+		free_memory(map_char, map_cnt, file_info);
 		return (-2);
 	}
 	return (0);

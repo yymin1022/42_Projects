@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 11:07:26 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/02/01 11:19:07 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 11:22:04 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,13 @@ char	*ft_strncpy(char *dest, char *src, int n)
 	dest[idx] = '.';
 	dest[idx + 1] = '\0';
 	return (dest);
+}
+
+void	free_memory(char **map_char, int **map_cnt, char *file_info)
+{
+	free(map_char);
+	free(map_cnt);
+	free(file_info);
 }
 
 void	print_err(int err)
