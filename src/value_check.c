@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:35:43 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/31 20:58:18 by sangylee         ###   ########.fr       */
+/*   Updated: 2023/01/31 22:29:00 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,20 @@ int	check_min(int x, int y, int d)
 		return (d);
 }
 
-void	check_val(int **t, int i, int j, int *min_max)
+void	check_val(int **t, int i, int j, int *max)
 {
+	int	min;
+
 	if (t[i - 1][j] == -1 || t[i][j - 1] == -1 || t[i - 1][j - 1] == -1)
+	{
 		t[i][j] = 1;
+		min = 0;
+	}
 	else
 	{
-		min_max[0] = check_min(t[i - 1][j], t[i][j - 1], t[i - 1][j - 1]);
-		t[i][j] = min_max[0] + 1;
-		if (min_max[1] < min_max[0] + 1)
-			min_max[1] = min_max[0] + 1;
+		min = check_min(t[i - 1][j], t[i][j - 1], t[i - 1][j - 1]);
+		t[i][j] = min + 1;
 	}
+	if (*max < min + 1)
+		*max = min + 1;
 }

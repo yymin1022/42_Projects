@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:28:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/31 20:57:21 by sangylee         ###   ########.fr       */
+/*   Updated: 2023/01/31 22:28:14 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	find_max(int **t, int row, int col)
 {
-	int	min_max[2];
+	int	max;
 	int	i;
 	int	j;
 
-	min_max[1] = 0;
+	max = 0;
 	i = 1;
 	while (i < row - 1)
 	{
@@ -26,12 +26,12 @@ int	find_max(int **t, int row, int col)
 		while (j < col - 1)
 		{
 			if (t[i][j] != -1)
-				check_val(t, i, j, min_max);
+				check_val(t, i, j, &max);
 			j++;
 		}
 		i++;
 	}
-	return (min_max[1]);
+	return (max);
 }
 
 t_point	find_answer(int **tab, int row, int col)

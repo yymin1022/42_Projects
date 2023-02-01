@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:22:03 by sangylee          #+#    #+#             */
-/*   Updated: 2023/01/30 20:25:43 by sangylee         ###   ########.fr       */
+/*   Updated: 2023/01/31 22:02:25 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	get_size(char *str)
 			break ;
 		len++;
 	}
+	close(fd);
 	return (len);
 }
 
@@ -62,6 +63,7 @@ char	*get_info(char *str)
 	info = (char *)malloc(buffer);
 	fd = open(str, O_RDONLY);
 	read(fd, info, buffer);
+	printf("ASDF %s\n", info);
 	close(fd);
 	return (info);
 }
