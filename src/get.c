@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:22:03 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 14:50:01 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 16:53:04 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,10 @@ char	*get_info(char *str)
 	if ((info[buffer - 1] == info[buffer - 2])
 		|| (info[buffer - 1] == info[buffer - 3])
 		|| (info[buffer - 2] == info[buffer - 3]))
+		info[0] = '\0';
+	if (!check_printable(info[buffer - 1])
+		|| !check_printable(info[buffer - 2])
+		|| !check_printable(info[buffer - 3]))
 		info[0] = '\0';
 	return (info);
 }
