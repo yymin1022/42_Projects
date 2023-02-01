@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 17:55:41 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 17:56:34 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,8 @@ int	main(int argc, char **argv)
 			print_err(result * -1);
 		if (is_stdin)
 			break ;
-		write(1, "\n", 1);
+		else if (idx < argc)
+			write(1, "\n", 1);
 	}
 	return (0);
 }
