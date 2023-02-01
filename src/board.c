@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:18:41 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 11:26:05 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 15:11:00 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	init_map(char **map_char, int **map_cnt, int row, int col)
 	}
 }
 
-void	init_map_char(char *file_name, char **map_char, int col, int size_data)
+int	init_map_char(char *file_name, char **map_char, int col, int size_data)
 {
 	char	*file_buf;
 	int		i;
@@ -48,6 +48,7 @@ void	init_map_char(char *file_name, char **map_char, int col, int size_data)
 		ft_strncpy(*(map_char + i), file_buf, col - 2);
 		i++;
 	}
+	return (i - 1);
 }
 
 int	init_map_cnt(char **map_char, int **map_cnt, char *map_info, t_point pt)

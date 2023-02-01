@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 14:39:46 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 15:10:06 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	get_result(char *file_name)
 	map_char = (char **)malloc(sizeof(char *) * cord.x);
 	map_cnt = (int **)malloc(sizeof(int *) * cord.x);
 	init_map(map_char, map_cnt, cord.x, cord.y);
-	init_map_char(file_name, map_char, cord.y, size_data);
+	if (init_map_char(file_name, map_char, cord.y, size_data) != cord.x - 2)
+		return (-1);
 	if (!init_map_cnt(map_char, map_cnt, map_info + size_data - 3, cord))
 	{
 		free_memory(map_char, map_cnt, map_info, cord);
