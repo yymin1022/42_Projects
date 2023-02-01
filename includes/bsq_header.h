@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:37:03 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 15:44:59 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 17:40:15 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ int		get_col(char *str);
 int		get_row(char *str, int len);
 int		get_size(char *str);
 int		init_map_char(char *file_name, char **map_char, int col, int size_data);
-int		init_map_cnt(char **map_char, int **map_cnt, char *file_info, t_point pt);
+int		init_map_cnt(char **map_char, int **map_cnt, char *info, t_point pt);
 int		print_answer(int **tab, char **board, t_point t, char c);
 char	*ft_strncpy(char *dest, char *src, int n);
 char	*get_info(char *str);
 void	check_val(int **t, int i, int j, int *min_max);
 void	draw_answer(char **tab, t_point pt, int max_value, char c);
-void	free_memory(char **map_char, int **map_cnt, char *file_info, t_point pt);
+void	free_memory(char **map_char, int **map_cnt, char *info, t_point pt);
 void	init_map(char **map_char, int **map_cnt, int row, int col);
 void	print_err(int err);
 t_point	find_answer(int **tab, int row, int col);
