@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 17:56:34 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 18:16:44 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ int	get_result(char *file_name)
 	int		**map_cnt;
 
 	map_info = get_info(file_name);
-	if (!(*map_info))
-		return (-1);
 	size_data = get_size(file_name);
-	if (get_row(map_info, size_data - 3) == 0)
+	if (!(*map_info) || get_row(map_info, size_data - 3) == 0)
 		return (-1);
 	cord.x = get_row(map_info, size_data - 3) + 2;
 	cord.y = get_col(file_name) + 2;
