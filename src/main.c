@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 17:54:18 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 17:55:41 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,10 +90,8 @@ int	main(int argc, char **argv)
 			result = get_result("tmp_map");
 		else
 			result = get_result(argv[idx++]);
-		if (result == -1)
-			print_err(1);
-		else if (result == -2)
-			print_err(2);
+		if (result < 0)
+			print_err(result * -1);
 		if (is_stdin)
 			break ;
 		write(1, "\n", 1);
