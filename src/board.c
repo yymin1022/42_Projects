@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:18:41 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 11:16:41 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 11:26:05 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	init_map_char(char *file_name, char **map_char, int col, int size_data)
 	}
 }
 
-int	init_map_cnt(char **map_char, int **map_cnt, char *file_info, t_point pt)
+int	init_map_cnt(char **map_char, int **map_cnt, char *map_info, t_point pt)
 {
 	int	i;
 	int	j;
@@ -61,9 +61,9 @@ int	init_map_cnt(char **map_char, int **map_cnt, char *file_info, t_point pt)
 		j = 0;
 		while (j < pt.y)
 		{
-			if (map_char[i][j] == file_info[0] || map_char[i][j] == '.')
+			if (map_char[i][j] == map_info[0] || map_char[i][j] == '.')
 				map_cnt[i][j] = 0;
-			else if (map_char[i][j] == file_info[1])
+			else if (map_char[i][j] == map_info[1])
 				map_cnt[i][j] = -1;
 			else
 				return (0);

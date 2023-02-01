@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 11:22:34 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 11:26:29 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,26 @@ int	get_result(char *file_name)
 {
 	t_point	cord;
 	int		size_data;
-	char	*file_info;
+	char	*map_info;
 	char	**map_char;
 	int		**map_cnt;
 
-	file_info = get_info(file_name);
+	map_info = get_info(file_name);
 	size_data = get_size(file_name);
-	cord.x = get_row(file_info, size_data - 3) + 2;
+	cord.x = get_row(map_info, size_data - 3) + 2;
 	cord.y = get_col(file_name) + 2;
 	map_char = (char **)malloc(sizeof(char *) * cord.x);
 	map_cnt = (int **)malloc(sizeof(int *) * cord.x);
 	init_map(map_char, map_cnt, cord.x, cord.y);
 	init_map_char(file_name, map_char, cord.y, size_data);
-	if (!init_map_cnt(map_char, map_cnt, file_info + size_data - 3, cord))
+	if (!init_map_cnt(map_char, map_cnt, map_info + size_data - 3, cord))
 	{
-		free_memory(map_char, map_cnt, file_info);
+		free_memory(map_char, map_cnt, map_info);
 		return (-1);
 	}
-	if (!print_answer(map_cnt, map_char, cord, file_info[size_data - 1]))
+	if (!print_answer(map_cnt, map_char, cord, map_info[size_data - 1]))
 	{
-		free_memory(map_char, map_cnt, file_info);
+		free_memory(map_char, map_cnt, map_info);
 		return (-2);
 	}
 	return (0);
