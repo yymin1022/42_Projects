@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:37:03 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 11:23:04 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 12:17:40 by sangylee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strncpy(char *dest, char *src, int n);
 char	*get_info(char *str);
 void	check_val(int **t, int i, int j, int *min_max);
 void	draw_answer(char **tab, t_point pt, int max_value, char c);
-void	free_memory(char **map_char, int **map_cnt, char *file_info);
+void	free_memory(char **map_char, int **map_cnt, char *file_info, t_point pt);
 void	init_map(char **map_char, int **map_cnt, int row, int col);
 void	init_map_char(char *file_name, char **map_char, int col, int size_data);
 void	print_err(int err);

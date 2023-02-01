@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:43:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 11:26:29 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 12:17:52 by sangylee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ int	get_result(char *file_name)
 	init_map_char(file_name, map_char, cord.y, size_data);
 	if (!init_map_cnt(map_char, map_cnt, map_info + size_data - 3, cord))
 	{
-		free_memory(map_char, map_cnt, map_info);
+		free_memory(map_char, map_cnt, map_info, cord);
 		return (-1);
 	}
 	if (!print_answer(map_cnt, map_char, cord, map_info[size_data - 1]))
 	{
-		free_memory(map_char, map_cnt, map_info);
+		free_memory(map_char, map_cnt, map_info, cord);
 		return (-2);
 	}
 	return (0);
