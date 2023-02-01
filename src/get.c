@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:22:03 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/01 13:05:51 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/01 13:46:19 by sangylee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,17 @@ char	*get_info(char *str)
 	char	*info;
 	int		buffer;
 
+	if (!str)
+		return (NULL);
 	buffer = get_size(str);
 	info = (char *)malloc(buffer);
 	fd = open(str, O_RDONLY);
 	read(fd, info, buffer);
 	close(fd);
+	if ((str[buffer - 1] == str[buffer - 2])
+		|| (str[buffer - 1] == str[buffer - 3])
+		|| (str[buffer - 2] == str[buffer - 3]))
+		info[0] = '\0';
 	return (info);
 }
 
