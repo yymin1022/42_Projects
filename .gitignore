@@ -1,3 +1,4 @@
 src/*.o
 bsq
+tmp_map
 *.swp
