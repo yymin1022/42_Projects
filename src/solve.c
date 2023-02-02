@@ -6,7 +6,7 @@
 /*   By: sangylee <sangylee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:28:59 by sangylee          #+#    #+#             */
-/*   Updated: 2023/02/02 10:15:40 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/02/02 10:21:06 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ int	print_answer(int **tab, char **board, t_point t, char c)
 {
 	int		max_value;
 	int		i;
-	int		j;
 	t_point	pt;
 
 	max_value = find_max(tab, t.x, t.y);
@@ -97,14 +96,8 @@ int	print_answer(int **tab, char **board, t_point t, char c)
 	while (i < t.x - 1)
 	{
 		write(1, board[i] + 1, t.y - 2);
-		j = 1;
-		/* while (j < t.y - 1)
-		{
-			write(1, &board[i][j], 1);
-			j++;
-		} */
-		i++;
 		write(1, "\n", 1);
+		i++;
 	}
 	return (1);
 }
