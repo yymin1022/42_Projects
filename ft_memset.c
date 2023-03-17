@@ -6,11 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:03:40 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 12:05:41 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 12:06:04 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *memset(void *b, int c, size_t len)
+void	*memset(void *b, int c, size_t len)
 {
 	int	i;
 
