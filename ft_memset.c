@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:03:40 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 12:08:22 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 12:14:02 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@ void	*memset(void *b, int c, size_t len)
 	while (i < len)
 	{
 		*(b + i) = (unsigned char)c;
+		i++;
 	}
 }
