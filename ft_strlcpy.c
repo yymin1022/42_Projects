@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 12:46:45 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 12:33:34 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 12:34:28 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		i = 0;
 		while (*(src + i) && i < size - 1)
 		{
-			*(dest + i) = *(src + i);
+			*(dst + i) = *(src + i);
 			i++;
 		}
-		*(dest + i) = '\0';
+		*(dst + i) = '\0';
 	}
 	return (src_size);
 }
