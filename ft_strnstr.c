@@ -6,11 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:46:49 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 13:57:19 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 14:38:14 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
