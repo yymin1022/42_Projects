@@ -6,9 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:00:29 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 12:06:16 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 16:34:02 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -16,8 +18,6 @@ size_t	ft_strlen(const char *s)
 
 	len = 0;
 	while (*(s + len))
-	{
 		len++;
-	}
 	return (len);
 }
