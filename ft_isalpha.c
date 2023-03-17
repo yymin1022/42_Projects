@@ -6,11 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 11:24:48 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 11:35:28 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 12:02:04 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if (c >= 65 && c <= 90)
 		return (1);
