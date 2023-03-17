@@ -6,9 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:51:51 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 12:35:02 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 14:50:32 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, char *src, size_t size)
 {
