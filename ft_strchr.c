@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:50:00 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 15:39:03 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 18:19:58 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ char	*ft_strchr(const char *s, int c)
 	while (*(s + i))
 	{
 		if (*(s + i) == (char)c)
-			return ((char *)s + i);
+			return ((char *)(s + i));
 		i++;
 	}
+	if (*(s + i) == (char)c)
+		return ((char *)(s + i));
 	return (0);
 }
