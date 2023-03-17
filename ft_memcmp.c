@@ -6,11 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:41:45 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 13:46:29 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 14:37:33 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
 
