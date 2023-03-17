@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:09:02 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 12:15:56 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 12:16:29 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	*memcpy(void *dst, const void *src, size_t n)
 		*(dst + i) = *(src + i);
 		i++;
 	}
-	return (src);
+	return (dst);
 }
