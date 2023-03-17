@@ -6,13 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:16:04 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 13:17:07 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 13:34:00 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*strrchr(const char *s, int c)
 {
-	char *res;
+	char	*res;
 	size_t	i;
 
 	i = 0;
