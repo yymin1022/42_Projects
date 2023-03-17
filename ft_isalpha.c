@@ -6,9 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 11:24:48 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 12:02:04 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 14:51:23 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
