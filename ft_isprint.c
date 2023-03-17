@@ -6,9 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 11:42:21 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 12:03:22 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 14:49:21 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
