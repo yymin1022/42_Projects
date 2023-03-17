@@ -6,11 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:58:07 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 14:23:25 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 14:38:46 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	size_t	i;
 	int		neg_flag;
