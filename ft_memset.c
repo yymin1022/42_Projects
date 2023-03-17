@@ -6,18 +6,23 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:03:40 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 12:17:21 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 16:35:24 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
+	unsigned char	*res;
+	size_t			i;
 
 	i = 0;
+	res = (unsigned char *)b;
 	while (i < len)
 	{
-		*(b + i) = (unsigned char)c;
+		*(res + i) = (unsigned char)c;
 		i++;
 	}
+	return (b);
 }
