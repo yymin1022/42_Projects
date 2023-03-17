@@ -6,19 +6,21 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:36:58 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 14:37:13 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 18:40:35 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
 
 	i = 0;
-	while (*(s + i) && i < n)
+	while (i < n)
 	{
-		if (*(s + i) == (unsigned char)c)
-			return (s + i);
+		if (*((unsigned char *)(s + i)) == (unsigned char)c)
+			return ((unsigned char *)(s + i));
 		i++;
 	}
 	return (0);
