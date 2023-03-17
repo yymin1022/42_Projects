@@ -6,9 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 12:46:45 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 12:34:28 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 14:50:37 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
