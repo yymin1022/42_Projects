@@ -6,11 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:16:04 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 13:34:00 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/17 14:36:00 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	char	*res;
 	size_t	i;
