@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:16:35 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 16:55:14 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/20 19:54:54 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {	
-	size_t			i;
+	size_t	i;
 
 	if (!dst && !src)
 		return (dst);
