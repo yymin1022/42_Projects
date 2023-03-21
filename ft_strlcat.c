@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:51:51 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 14:50:32 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/21 20:19:04 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,8 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 	size_t	dst_size;
 	size_t	src_size;
 
-	dst_size = 0;
-	while (*(dst + dst_size))
-		dst_size++;
-	src_size = 0;
-	while (*(src + src_size))
-		src_size++;
+	dst_size = ft_strlen(dst);
+	src_size = ft_strlen(src);
 	if (size > 0)
 	{
 		i = 0;
