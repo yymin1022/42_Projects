@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:03:40 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 16:35:24 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/21 19:58:39 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*res;
-	size_t			i;
+	size_t	i;
 
 	i = 0;
-	res = (unsigned char *)b;
 	while (i < len)
 	{
-		*(res + i) = (unsigned char)c;
+		*((unsigned char *)b + i) = (unsigned char)c;
 		i++;
 	}
 	return (b);
