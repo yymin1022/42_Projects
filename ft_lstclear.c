@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 18:16:16 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/23 18:22:53 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/23 18:31:51 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	tmp;
+	t_list	*tmp;
 
 	while (*lst)
 	{
 		tmp = (*lst)->next;
-		ft_lstdelone(*lst);
+		ft_lstdelone(*lst, del);
 		*lst = tmp;
 	}
 }
