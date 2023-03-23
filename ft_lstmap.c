@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 18:26:34 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/23 18:34:40 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/23 19:42:29 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*res_next;
 
 	res = 0;
-	while (lst->next)
+	while (lst)
 	{
 		res_next = ft_lstnew(f(lst->content));
 		if (!res_next)
