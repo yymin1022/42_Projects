@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 21:31:40 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/20 22:43:22 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/23 12:47:54 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	to;
 	size_t	i;
 
-	if (!ft_strlen(s1))
+	if (!ft_strlen(s1) || !ft_strlen(set))
 		return (ft_strdup(s1));
 	i = 0;
 	while (*(s1 + i) && is_remove(*(s1 + i), set))
