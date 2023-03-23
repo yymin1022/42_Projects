@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 18:26:34 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/23 19:42:29 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/23 19:47:11 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,17 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*res;
 	t_list	*res_next;
+	void	*tmp;
 
 	res = 0;
 	while (lst)
 	{
-		res_next = ft_lstnew(f(lst->content));
+		tmp = f(lst->content);
+		res_next = ft_lstnew(tmp);
 		if (!res_next)
 		{
 			ft_lstclear(&res, del);
+			del(tmp);
 			return (0);
 		}
 		ft_lstadd_back(&res, res_next);
