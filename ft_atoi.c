@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:58:07 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 16:02:49 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/23 11:39:07 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,17 @@
 int	ft_atoi(const char *str)
 {
 	size_t	i;
-	int		neg_flag;
-	int		res;
+	long	neg_flag;
+	long	res;
 
 	i = 0;
-	while (*(str + i) && (((char)*(str + i) >= 9 && (char)*(str + i) <= 13)
-			|| ((char)*(str + i) == 32)))
+	while (*(str + i) && ((*(str + i) >= 9 && *(str + i) <= 13)
+			|| (*(str + i) == 32)))
 		i++;
 	neg_flag = 1;
 	if (*(str + i) == '-')
-	{
-		i++;
 		neg_flag = -1;
-	}
-	else if (*(str + i) == '+')
-		i++;
+	i += (*(str + i) == '+' || *(str + i) == '-');
 	res = 0;
 	while (*(str + i))
 	{
@@ -38,5 +34,5 @@ int	ft_atoi(const char *str)
 		res = res * 10 + *(str + i) - 48;
 		i++;
 	}
-	return (res * neg_flag);
+	return ((int)(res * neg_flag));
 }
