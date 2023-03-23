@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:56:40 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/20 21:20:28 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/23 11:50:58 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!res)
 		return (0);
 	i = 0;
-	while (*(s + i + start) && i < len)
+	while (i < len)
 	{
 		*(res + i) = *(s + i + start);
 		i++;
