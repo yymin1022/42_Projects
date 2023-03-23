@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:15:04 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/23 15:15:54 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/23 15:26:12 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr_fd(char *s, int fd)
 	idx = 0;
 	while (*(s + idx))
 	{
-		write(fd, s + idx, 1);
+		ft_putchar_fd(*(s + idx), fd);
 		idx++;
 	}
 }
