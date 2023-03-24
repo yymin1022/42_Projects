@@ -6,11 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:12:05 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/24 12:35:14 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/24 12:40:53 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	ft_get_str_cnt(char const *str, char c)
 {
