@@ -6,13 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 13:34:42 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/23 14:51:46 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/24 12:28:58 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	get_len(int n, int *is_neg)
+static size_t	get_len(int n, int *is_neg)
 {
 	size_t	len;
 
@@ -32,7 +32,7 @@ size_t	get_len(int n, int *is_neg)
 	return (len);
 }
 
-void	get_str(int n, int is_neg, char *res)
+static void	get_str(int n, int is_neg, char *res)
 {
 	size_t	idx;
 
@@ -61,7 +61,7 @@ void	get_str(int n, int is_neg, char *res)
 	*(res + idx) = '\0';
 }
 
-void	rev_str(char *str)
+static void	rev_str(char *str)
 {
 	char	c;
 	size_t	idx;
