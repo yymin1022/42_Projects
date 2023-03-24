@@ -6,9 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:44:34 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/17 14:51:18 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/24 12:37:04 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_toupper(int c)
 {
