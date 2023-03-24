@@ -6,13 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:12:05 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/24 12:15:39 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/24 12:35:14 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_get_str_cnt(char const *str, char c)
+static int	ft_get_str_cnt(char const *str, char c)
 {
 	size_t	cnt;
 	size_t	idx;
@@ -31,7 +31,7 @@ int	ft_get_str_cnt(char const *str, char c)
 	return (cnt);
 }
 
-char	*ft_get_str(char const *str, char c, size_t *orig_idx)
+static char	*ft_get_str(char const *str, char c, size_t *orig_idx)
 {
 	char	*tmp;
 	size_t	idx;
@@ -54,7 +54,7 @@ char	*ft_get_str(char const *str, char c, size_t *orig_idx)
 	return (tmp);
 }
 
-char	**free_mem(char **res)
+static char	**free_mem(char **res)
 {
 	size_t	idx;
 
