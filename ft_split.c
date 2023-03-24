@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:12:05 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/23 13:33:46 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/24 12:15:39 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ char	*ft_get_str(char const *str, char c, size_t *orig_idx)
 	return (tmp);
 }
 
-char	**free_mem(char **res, size_t len)
+char	**free_mem(char **res)
 {
 	size_t	idx;
 
 	idx = 0;
-	while (idx < len)
+	while (*(res + idx))
 	{
 		free(*(res + idx));
 		idx++;
@@ -89,7 +89,7 @@ char	**ft_split(char const *str, char c)
 		{
 			*(result + result_idx) = ft_get_str(str + idx, c, &idx);
 			if (!*(result + result_idx))
-				return (free_mem(result, result_idx));
+				return (free_mem(result));
 			result_idx++;
 		}
 	}
