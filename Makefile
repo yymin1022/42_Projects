@@ -29,6 +29,7 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 
 bonus: 
+	sleep 1
 	make BONUS=1 all
 
 all: $(NAME)
