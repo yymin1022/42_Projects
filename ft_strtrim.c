@@ -6,13 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 21:31:40 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/03/23 12:47:54 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/03/24 12:35:59 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_remove(char const c, char const *set)
+static int	is_remove(char const c, char const *set)
 {
 	size_t	i;
 
