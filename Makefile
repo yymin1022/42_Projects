@@ -29,7 +29,6 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 
 bonus: 
-	sleep 1
 	make BONUS=1 all
 
 all: $(NAME)
@@ -41,3 +40,5 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
+
+.PHONY: all bonus clean fclean re
