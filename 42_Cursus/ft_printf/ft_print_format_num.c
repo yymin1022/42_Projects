@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 01:40:23 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/07/01 01:58:35 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/07/01 02:00:32 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ static void	print_dec(int num, int *cnt)
 	long long	n;
 
 	n = num;
-	if(n < 0){
+	if (n < 0)
+	{
 		print_char('-', cnt);
 		n *= -1;
 	}
