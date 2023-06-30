@@ -6,13 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 01:40:23 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/07/01 02:00:32 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/07/01 02:11:26 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	print_dec(int num, int *cnt)
+void	print_dec(int num, int *cnt)
 {
 	long long	n;
 
@@ -25,7 +25,7 @@ static void	print_dec(int num, int *cnt)
 	print_u_dec(num, cnt);
 }
 
-static void	print_u_dec(unsigned int num, int *cnt)
+void	print_u_dec(unsigned int num, int *cnt)
 {
 	if (num < 10)
 		print_char(num + '0', cnt);
@@ -36,7 +36,7 @@ static void	print_u_dec(unsigned int num, int *cnt)
 	}
 }
 
-static void	print_hex_lower(int num, int *cnt)
+void	print_hex_lower(int num, int *cnt)
 {
 	if (num < 16)
 		print_char("0123456789abcdef"[num], cnt);
@@ -47,7 +47,7 @@ static void	print_hex_lower(int num, int *cnt)
 	}
 }
 
-static void	print_hex_upper(int num, int *cnt)
+void	print_hex_upper(int num, int *cnt)
 {
 	if (num < 16)
 		print_char("0123456789ABCDEF"[num], cnt);

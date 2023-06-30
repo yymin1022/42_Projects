@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 18:45:19 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/07/01 02:00:18 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/07/01 02:11:58 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	print_format(va_list ap, const char format, int *cnt)
 {
 	if (format == 'c')
-		print_char(va_arg(ap, char), cnt);
+		print_char(va_arg(ap, int), cnt);
 	else if (format == 's')
 		print_str(va_arg(ap, char *), cnt);
 	else if (format == 'p')
@@ -49,4 +49,5 @@ int	ft_printf(const char *str, ...)
 			print_char(*(str + idx), &cnt);
 		idx++;
 	}
+	return (cnt);
 }
