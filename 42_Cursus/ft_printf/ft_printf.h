@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 21:49:42 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/06/30 21:51:08 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/06/30 21:52:01 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 # define FT_PRINTF_H
 # include <stdarg.h>
 
-int	ft_printf(const char *, ...);
+int	ft_printf(const char *str, ...);
 
 #endif
