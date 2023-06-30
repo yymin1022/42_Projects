@@ -10,7 +10,7 @@ OBJS=$(SRCS:.c=.o)
 
 $(NAME): $(OBJS)
 	cd libft && make all
-	cp libft/libft.a $(NAME)
+	mv libft/libft.a $(NAME)
 	ar rc $(NAME) $(OBJS)
 
 all: $(NAME)
