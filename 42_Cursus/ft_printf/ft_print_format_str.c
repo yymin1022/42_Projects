@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 01:41:25 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/07/01 02:12:24 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/07/01 20:06:36 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ void	print_char(char c, int *cnt)
 
 void	print_str(char *str, int *cnt)
 {
+	if (str == 0)
+	{
+		ft_putstr_fd("(null)", 1);
+		(*cnt) += 6;
+		return ;
+	}
 	ft_putstr_fd(str, 1);
 	(*cnt) += ft_strlen(str);
 }
