@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 01:40:23 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/07/01 20:24:51 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/07/01 20:48:58 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	print_u_dec(unsigned int num, int *cnt)
 	}
 }
 
-void	print_hex_lower(int num, int *cnt)
+void	print_hex_lower(unsigned int num, int *cnt)
 {
 	if (num < 16)
 		print_char("0123456789abcdef"[num], cnt);
@@ -47,13 +47,13 @@ void	print_hex_lower(int num, int *cnt)
 	}
 }
 
-void	print_hex_upper(int num, int *cnt)
+void	print_hex_upper(unsigned int num, int *cnt)
 {
 	if (num < 16)
 		print_char("0123456789ABCDEF"[num], cnt);
 	else
 	{
-		print_hex_lower(num / 16, cnt);
-		print_hex_lower(num % 16, cnt);
+		print_hex_upper(num / 16, cnt);
+		print_hex_upper(num % 16, cnt);
 	}
 }
