@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 18:45:19 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/07/01 02:11:58 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/07/01 21:02:47 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ int	ft_printf(const char *str, ...)
 			print_char(*(str + idx), &cnt);
 		idx++;
 	}
+	va_end(ap);
 	return (cnt);
 }
