@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 01:40:23 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/07/01 02:11:26 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/07/01 20:24:51 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	print_dec(int num, int *cnt)
 		print_char('-', cnt);
 		n *= -1;
 	}
-	print_u_dec(num, cnt);
+	print_u_dec(n, cnt);
 }
 
 void	print_u_dec(unsigned int num, int *cnt)
