@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 18:45:19 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/07/17 18:32:25 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/07/18 01:55:15 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	print_format(va_list ap, const char format, int *cnt)
 		return (-1);
 	else if (format == '%' && print_char('%', cnt) < 0)
 		return (-1);
-	return (0);
+	return (-1);
 }
 
 int	ft_printf(const char *str, ...)
