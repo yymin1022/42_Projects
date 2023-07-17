@@ -9,14 +9,11 @@ OBJS=$(SRCS:.c=.o)
 	$(CC) $(CFLAGS) -c $(<) -o $(@)
 
 $(NAME): $(OBJS)
-	cd libft && make all
-	mv libft/libft.a $(NAME)
 	ar rc $(NAME) $(OBJS)
 
 all: $(NAME)
 
 clean:
-	cd libft && make clean
 	rm -rf $(OBJS)
 
 fclean: clean
