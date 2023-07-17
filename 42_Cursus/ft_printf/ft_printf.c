@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 18:45:19 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/07/17 18:21:47 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/07/17 18:23:33 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ int	ft_printf(const char *str, ...)
 	va_start(ap, str);
 	while (*(str + idx))
 	{
-		if (*(str + idx) == '%')
-			print_format(ap, *(str + ++idx), &cnt);
-		else
-			print_char(*(str + idx), &cnt);
+		if (*(str + idx) == '%' && print_format(ap, *(str + ++idx), &cnt) < 0)
+			return (-1);
+		else if (print_char(*(str + idx), &cnt) < 0)
+			return (-1);
 		idx++;
 	}
 	va_end(ap);
