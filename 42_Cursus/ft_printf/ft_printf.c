@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 18:45:19 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/07/18 01:56:29 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/07/18 01:59:22 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,22 @@
 
 static int	print_format(va_list ap, const char format, int *cnt)
 {
-	if (format == 'c' && print_char(va_arg(ap, int), cnt) < 0)
-		return (-1);
-	else if (format == 's' && print_str(va_arg(ap, char *), cnt) < 0)
-		return (-1);
-	else if (format == 'p' && print_ptr(va_arg(ap, void *), cnt) < 0)
-		return (-1);
-	else if ((format == 'd' || format == 'i')
-		&& print_dec(va_arg(ap, int), cnt) < 0)
-		return (-1);
-	else if (format == 'u' && print_u_dec(va_arg(ap, unsigned int), cnt) < 0)
-		return (-1);
-	else if (format == 'x' && print_hex_lower(va_arg(ap, int), cnt) < 0)
-		return (-1);
-	else if (format == 'X' && print_hex_upper(va_arg(ap, int), cnt) < 0)
-		return (-1);
-	else if (format == '%' && print_char('%', cnt) < 0)
-		return (-1);
+	if (format == 'c')
+		return (print_char(va_arg(ap, int), cnt));
+	else if (format == 's')
+		return (print_str(va_arg(ap, char *), cnt));
+	else if (format == 'p')
+		return (print_ptr(va_arg(ap, void *), cnt));
+	else if (format == 'd' || format == 'i')
+		return (print_dec(va_arg(ap, int), cnt));
+	else if (format == 'u')
+		return (print_u_dec(va_arg(ap, unsigned int), cnt));
+	else if (format == 'x')
+		return (print_hex_lower(va_arg(ap, int), cnt));
+	else if (format == 'X')
+		return (print_hex_upper(va_arg(ap, int), cnt));
+	else if (format == '%')
+		return (print_char('%', cnt));
 	else
 		return (-1);
 	return (0);
