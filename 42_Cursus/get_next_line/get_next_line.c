@@ -6,11 +6,25 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 06:00:23 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/08/10 02:35:18 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/08/12 03:23:25 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+char	*strjoin(char *a, char *b)
+{
+	char	*result;
+
+	return (result);
+}
+
+char	**split(char *line)
+{
+	char	**result;
+
+	return (result);
+}
 
 char	*get_next_line(int fd)
 {
