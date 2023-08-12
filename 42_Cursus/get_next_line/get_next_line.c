@@ -6,10 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 06:00:23 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/08/12 18:56:46 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/08/12 19:45:26 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "get_next_line.h"
 
 char	*get_a_line(char *backup, size_t size)
@@ -21,59 +22,69 @@ char	*get_a_line(char *backup, size_t size)
 	line = (char *)malloc((size + 1) * sizeof(char));
 	while (idx < size)
 	{
-		*(line + idx) = *(backup + idx);
+		line[idx] = backup[idx];
 		idx++;
 	}
-	*(line + idx) = '\0';
+	line[idx] = '\0';
 	return (line);
 }
 
-char	*find_new_line(char *backup, char *line)
+char	*next_backup(char *backup, size_t idx)
+{
+	char	*res;
+
+	res = ft_strdup(backup + idx);
+	if (!res)
+		return (NULL);
+	free(backup);
+	return (res);
+}
+
+size_t	find_new_line(char **backup, char **line)
 {
 	size_t	idx;
 
 	idx = 0;
-	while (*(backup + idx))
+	while ((*backup)[idx])
 	{
-		if (*(backup + idx) == '\n')
+		if ((*backup)[idx] == '\n')
 		{
-			line = get_a_line(backup, idx);
+			*line = get_a_line(*backup, idx);
 			if (!line)
-				return (NULL);
-			break ;
+				return (0);
+			*backup = next_backup(*backup, idx + 1);
+			return (1);
 		}
 		idx++;
 	}
-	return (backup);
-}
-
-ssize_t	read_buffer(int fd, char *buf)
-{
-	ssize_t	read_size;
-
-	read_size = read(fd, buf, BUFFER_SIZE);
-	if(read_size < 0)
-		return (-1);
-	buf[read_size] = '\0';
-	return (read_size);
+	return (0);
 }
 
 char	*get_next_line(int fd)
 {
-	char		buf[BUFFER_SIZE];
+	char		buf[BUFFER_SIZE + 1];
 	char		*line;
 	static char	*backup;
+	ssize_t		read_size;
 
 	if (BUFFER_SIZE <= 0 || fd < 0)
 		return (0);
+	if (!backup)
+		backup = (char *)malloc(sizeof(char));
+	if (!backup)
+		return (NULL);
 	line = NULL;
-	while (!find_new_line(backup, line))
+	while (!find_new_line(&backup, &line))
 	{
-		if(read_buffer(fd, buf) < 0)
-			return (0);
+		read_size = read(fd, buf, BUFFER_SIZE);
+		if (read_size < 0)
+			return (NULL);
+		buf[read_size] = '\0';
 		backup = ft_strjoin(backup, buf);
 		if (!backup)
-			return (0);
+			return (NULL);
+		if (read_size == 0)
+			return (backup);
 	}
 	return (line);
 }
