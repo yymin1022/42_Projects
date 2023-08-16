@@ -6,27 +6,26 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 06:00:23 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/08/16 23:24:02 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/08/16 23:44:08 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*get_a_line(char *backup, ssize_t size)
+char	*get_a_line(char **line, char *backup, ssize_t size)
 {
-	char	*line;
 	ssize_t	idx;
 
 	if (!backup)
 		return (NULL);
-	line = (char *)malloc((size + 1) * sizeof(char));
-	if (!line)
+	*line = (char *)malloc((size + 1) * sizeof(char));
+	if (!(*line))
 		return (NULL);
 	idx = -1;
 	while (++idx < size)
-		line[idx] = backup[idx];
-	line[idx] = '\0';
-	return (line);
+		(*line)[idx] = backup[idx];
+	(*line)[idx] = '\0';
+	return (*line);
 }
 
 char	*next_backup(char **backup, ssize_t idx)
@@ -49,14 +48,21 @@ size_t	find_new_line(char **backup, char **line)
 	{
 		if ((*backup)[idx] == '\n')
 		{
-			*line = get_a_line(*backup, idx + 1);
-			if (!(*line))
+			if (!get_a_line(line, *backup, idx + 1))
 				return (0);
 			*backup = next_backup(backup, idx + 1);
 			return (1);
 		}
 	}
 	return (0);
+}
+
+char	*get_eof_line(char **line, char **backup)
+{
+	if (!get_a_line(&line, backup, ft_strlen(backup)))
+		return (ft_free(&backup));
+	ft_free(&backup);
+	return (line);
 }
 
 char	*get_next_line(int fd)
@@ -76,18 +82,10 @@ char	*get_next_line(int fd)
 	while (!find_new_line(&backup, &line))
 	{
 		read_size = read(fd, buf, BUFFER_SIZE);
-		if (read_size < 0)
-			return (ft_free(&backup));
-		if (ft_strlen(backup) == 0 && read_size == 0)
+		if (read_size < 0 || (read_size == 0 && ft_strlen(backup) == 0))
 			return (ft_free(&backup));
 		if (read_size == 0)
-		{
-			line = ft_strdup(backup);
-			if (!line)
-				return (ft_free(&backup));
-			ft_free(&backup);
-			return (line);
-		}
+			return (get_eof_line(&line, &backup));
 		buf[read_size] = '\0';
 		backup = ft_strjoin(backup, buf);
 		if (!backup)
