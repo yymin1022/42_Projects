@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 06:00:23 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/08/16 23:44:08 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/08/16 23:47:53 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,9 @@ char	*get_a_line(char **line, char *backup, ssize_t size)
 	return (*line);
 }
 
-char	*next_backup(char **backup, ssize_t idx)
-{
-	char	*res;
-
-	res = ft_strdup((*backup) + idx);
-	if (!res)
-		return (NULL);
-	free(*backup);
-	return (res);
-}
-
 size_t	find_new_line(char **backup, char **line)
 {
+	char	*tmp;
 	ssize_t	idx;
 
 	idx = -1;
@@ -50,7 +40,11 @@ size_t	find_new_line(char **backup, char **line)
 		{
 			if (!get_a_line(line, *backup, idx + 1))
 				return (0);
-			*backup = next_backup(backup, idx + 1);
+			tmp = ft_strdup((*backup) + idx + 1);
+			ft_free(backup);
+			if (!tmp)
+				return (0);
+			*backup = tmp;
 			return (1);
 		}
 	}
@@ -59,10 +53,10 @@ size_t	find_new_line(char **backup, char **line)
 
 char	*get_eof_line(char **line, char **backup)
 {
-	if (!get_a_line(&line, backup, ft_strlen(backup)))
-		return (ft_free(&backup));
-	ft_free(&backup);
-	return (line);
+	if (!get_a_line(line, *backup, ft_strlen(*backup)))
+		return (ft_free(backup));
+	ft_free(backup);
+	return (*line);
 }
 
 char	*get_next_line(int fd)
