@@ -23,12 +23,12 @@ char	*ft_strdup(const char *s1)
 	if (!res)
 		return (NULL);
 	idx = 0;
-	while (*(s1 + idx))
+	while (s1[idx])
 	{
-		*(res + idx) = *(s1 + idx);
+		res[idx] = s1[idx];
 		idx++;
 	}
-	*(res + idx) = '\0';
+	res[idx] = '\0';
 	return (res);
 }
 
@@ -47,18 +47,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!res)
 		return (NULL);
 	i = 0;
-	while (*(s1 + i))
+	while (s1[i])
 	{
-		*(res + i) = *(s1 + i);
+		res[i] = s1[i];
 		i++;
 	}
 	i = 0;
-	while (*(s2 + i))
+	while (s2[i])
 	{
-		*(res + i + size1) = *(s2 + i);
+		res[i + size1] = s2[i];
 		i++;
 	}
-	*(res + i + size1) = '\0';
+	res[i + size1] = '\0';
 	return (res);
 }
 
@@ -67,7 +67,7 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while (*(s + len))
+	while (s[len])
 		len++;
 	return (len);
 }
