@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 06:00:23 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/08/16 23:47:53 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/08/17 00:20:23 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ char	*get_next_line(int fd)
 		if (read_size == 0)
 			return (get_eof_line(&line, &backup));
 		buf[read_size] = '\0';
-		backup = ft_strjoin(backup, buf);
+		backup = ft_strjoin(&backup, buf);
 		if (!backup)
 			return (NULL);
 	}
