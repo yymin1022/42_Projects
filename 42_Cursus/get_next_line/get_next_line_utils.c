@@ -17,9 +17,11 @@ char	*ft_strdup(const char *s1)
 	char	*res;
 	size_t	idx;
 
+	if(!s1)
+		return (NULL);
 	res = (char *)malloc(ft_strlen(s1) + 1);
 	if (!res)
-		return (0);
+		return (NULL);
 	idx = 0;
 	while (*(s1 + idx))
 	{
@@ -37,11 +39,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	size1;
 	size_t	size2;
 
+	if(!s1 || !s2)
+		return (NULL);
 	size1 = ft_strlen(s1);
 	size2 = ft_strlen(s2);
 	res = (char *)malloc(sizeof(char) * (size1 + size2 + 1));
 	if (!res)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (*(s1 + i))
 	{
