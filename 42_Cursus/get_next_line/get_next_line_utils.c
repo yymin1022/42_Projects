@@ -21,7 +21,7 @@ void	*ft_free(char **target)
 	return (*target);
 }
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(char *s1)
 {
 	char	*res;
 	ssize_t	idx;
@@ -38,7 +38,7 @@ char	*ft_strdup(const char *s1)
 	return (res);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*res;
 	ssize_t	i;
@@ -59,10 +59,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2[++i])
 		res[i + size1] = s2[i];
 	res[i + size1] = '\0';
+	ft_free(&s1);
 	return (res);
 }
 
-ssize_t	ft_strlen(const char *s)
+ssize_t	ft_strlen(char *s)
 {
 	ssize_t	len;
 

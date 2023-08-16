@@ -18,6 +18,8 @@ char	*get_a_line(char *backup, ssize_t size)
 	char	*line;
 	ssize_t	idx;
 
+	if (!backup)
+		return (NULL);
 	line = (char *)malloc((size + 1) * sizeof(char));
 	if (!line)
 		return (NULL);
@@ -80,7 +82,13 @@ char	*get_next_line(int fd)
 		if (ft_strlen(backup) == 0 && read_size == 0)
 			return (ft_free(&backup));
 		if (read_size == 0)
-			return (backup);
+		{
+			line = ft_strdup(backup);
+			if (!line)
+				return (ft_free(&backup));
+			ft_free(&backup);
+			return (line);
+		}
 		buf[read_size] = '\0';
 		backup = ft_strjoin(backup, buf);
 		if (!backup)
