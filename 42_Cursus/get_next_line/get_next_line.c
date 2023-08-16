@@ -50,7 +50,7 @@ size_t	find_new_line(char **backup, char **line)
 	{
 		if ((*backup)[idx] == '\n')
 		{
-			*line = get_a_line(*backup, idx);
+			*line = get_a_line(*backup, idx + 1);
 			if (!(*line))
 				return (0);
 			*backup = next_backup(backup, idx + 1);
