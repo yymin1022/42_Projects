@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 06:00:32 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/08/17 00:21:14 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/08/19 17:18:18 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ ssize_t	ft_strlen(char *s)
 {
 	ssize_t	len;
 
+	if (!s)
+		return (0);
 	len = 0;
 	while (s[len])
 		len++;
