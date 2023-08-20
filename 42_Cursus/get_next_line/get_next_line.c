@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-char	*get_a_line(char **line, char *backup, ssize_t size)
+static char	*get_a_line(char **line, char *backup, ssize_t size)
 {
 	ssize_t	idx;
 
@@ -28,7 +28,7 @@ char	*get_a_line(char **line, char *backup, ssize_t size)
 	return (*line);
 }
 
-size_t	find_new_line(char **backup, char **line)
+static size_t	find_new_line(char **backup, char **line)
 {
 	char	*tmp;
 	ssize_t	idx;
@@ -54,7 +54,7 @@ size_t	find_new_line(char **backup, char **line)
 	return (0);
 }
 
-char	*get_eof_line(char **line, char **backup)
+static char	*get_eof_line(char **line, char **backup)
 {
 	if (!get_a_line(line, *backup, ft_strlen(*backup)))
 		return (ft_free(backup));
