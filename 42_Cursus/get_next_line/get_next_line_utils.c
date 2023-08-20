@@ -49,7 +49,7 @@ char	*ft_strjoin(char **s1, char *s2)
 		return (ft_free(s1));
 	size1 = ft_strlen(*s1);
 	size2 = ft_strlen(s2);
-	res = (char *)malloc(sizeof(char) * (size1 + size2 + 1));
+	res = (char *)malloc(size1 + size2 + 1);
 	if (!res)
 		return (ft_free(s1));
 	i = -1;

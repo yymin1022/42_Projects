@@ -18,7 +18,7 @@ static char	*get_a_line(char **line, char *backup, ssize_t size)
 
 	if (!backup)
 		return (NULL);
-	*line = (char *)malloc((size + 1) * sizeof(char));
+	*line = (char *)malloc(size + 1);
 	if (!(*line))
 		return (NULL);
 	idx = -1;
