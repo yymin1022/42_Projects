@@ -66,26 +66,26 @@ char	*get_next_line(int fd)
 {
 	char		buf[BUFFER_SIZE + 1];
 	char		*line;
-	static char	*backup;
+	static char	*backup[OPEN_MAX_GNL];
 	ssize_t		read_size;
 
-	if (BUFFER_SIZE <= 0 || fd < 0)
+	if (BUFFER_SIZE <= 0 || fd < 0 || fd >= OPEN_MAX_GNL)
 		return (0);
-	if (!backup)
-		backup = ft_strdup("");
-	if (!backup)
+	if (!(backup[fd]))
+		backup[fd] = ft_strdup("");
+	if (!(backup[fd]))
 		return (NULL);
 	line = NULL;
-	while (!find_new_line(&backup, &line))
+	while (!find_new_line(&(backup[fd]), &line))
 	{
 		read_size = read(fd, buf, BUFFER_SIZE);
-		if (read_size < 0 || (read_size == 0 && ft_strlen(backup) == 0))
-			return (ft_free(&backup));
+		if (read_size < 0 || (read_size == 0 && ft_strlen(backup[fd]) == 0))
+			return (ft_free(&(backup[fd])));
 		if (read_size == 0)
-			return (get_eof_line(&line, &backup));
+			return (get_eof_line(&line, &(backup[fd])));
 		buf[read_size] = '\0';
-		backup = ft_strjoin(&backup, buf);
-		if (!backup)
+		backup[fd] = ft_strjoin(&(backup[fd]), buf);
+		if (!(backup[fd]))
 			return (NULL);
 	}
 	return (line);
