@@ -6,11 +6,16 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 01:49:43 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/10/08 01:50:18 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/10/08 01:52:25 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "server.h"
+
 int	main(int argc, char** argv)
 {
+	pid_t	pid;
+
+	
 	return (0);
 }

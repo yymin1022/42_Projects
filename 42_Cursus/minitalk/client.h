@@ -6,7 +6,12 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 01:51:39 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/10/08 01:51:40 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/10/08 01:53:40 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CLIENT_H
+# define CLIENT_H
+# include <signal.h>
+
+#endif
