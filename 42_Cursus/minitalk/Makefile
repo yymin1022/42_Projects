@@ -1,11 +1,11 @@
-CC=gcc
+CC=cc
 CFLAGS=-Wall -Wextra -Werror
 
 CLIENT=client
-CLIENT_SRC=client.c
+CLIENT_SRC=client.c client_utils.c
 CLIENT_OBJ=$(CLIENT_SRC:.c=.o)
 
-SERVER=sever
+SERVER=server
 SERVER_SRC=server.c
 SERVER_OBJ=$(SERVER_SRC:.c=.o)
 
@@ -13,10 +13,10 @@ SERVER_OBJ=$(SERVER_SRC:.c=.o)
 	$(CC) $(CFLAGS) -c $(<) -o $(@)
 
 $(CLIENT): $(CLIENT_OBJ)
-	$(CC) $(CFLAGS) $(<) -o $(@)
+	$(CC) $(CFLAGS) $(^) -o $(@)
 
 $(SERVER): $(SERVER_OBJ)
-	$(CC) $(CFLAGS) $(<) -o $(@)
+	$(CC) $(CFLAGS) $(^) -o $(@)
 
 all: $(SERVER) $(CLIENT)
 

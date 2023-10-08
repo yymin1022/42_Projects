@@ -6,12 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 01:51:34 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/10/08 01:53:27 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/10/08 17:36:41 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERVER_H
 # define SERVER_H
 # include <signal.h>
+# include <unistd.h>
 
 #endif

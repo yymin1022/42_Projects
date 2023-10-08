@@ -6,13 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 01:49:45 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/10/08 17:14:44 by yonyoo           ###   ########.fr       */
+/*   Updated: 2023/10/08 19:35:57 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
 
-static void ft_send_str(pid_t pid, size_t len, char *str)
+static void	ft_send_str(pid_t pid, size_t len, char *str)
 {
 	int		data;
 	size_t	bit;
@@ -24,11 +24,12 @@ static void ft_send_str(pid_t pid, size_t len, char *str)
 		bit = 0;
 		while (bit < 8)
 		{
-			data = (str[idx] >> (7 - bit)) & 1;
-			if (data)
+			data = (str[idx] >> (7 - bit) & 1);
+			if (data == 0)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
+			usleep(100);
 			bit++;
 		}
 		idx++;
@@ -40,15 +41,15 @@ static void	ft_parse_str(pid_t pid, char *str)
 	char	*data;
 	size_t	len;
 
-	data = str; // str + '\n'
+	data = ft_strjoin(str, "\n");
 	if (!data)
-		return;
-	len = 0; //ft_strlen(data);
+		return ;
+	len = ft_strlen(data);
 	ft_send_str(pid, len, data);
 	free(data);
 }
 
-int	main(int argc, char** argv)
+int	main(int argc, char **argv)
 {
 	pid_t	pid;
 
