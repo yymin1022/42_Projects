@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 01:49:45 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/10/08 02:29:44 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/10/08 17:14:44 by yonyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,15 @@ int	main(int argc, char** argv)
 
 	if (argc != 3)
 	{
-		// print err
+		ft_put_str("Invalid Argument\n");
 		return (0);
 	}
-	pid = 100; // atoi(argv[1]);
+	pid = ft_atoi(argv[1]);
 	if (pid < 100 || pid > 99998)
 	{
-		// invalid pid
+		ft_put_str("Invalid PID : ");
+		ft_put_str(argv[1]);
+		ft_put_str("\n");
 		return (0);
 	}
 	ft_parse_str(pid, argv[2]);
