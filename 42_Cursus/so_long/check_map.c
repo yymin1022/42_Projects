@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 18:35:21 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/10/28 19:13:17 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/10/28 20:04:40 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	check_map_valid(char *file, t_solong *data)
 {
 	init_data(file, data);
+	init_data_map(file, data);
 }
 
 void	init_data(char *file, t_solong *data)
