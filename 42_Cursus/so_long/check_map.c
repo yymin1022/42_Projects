@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 18:35:21 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/10/28 20:04:40 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/10/29 03:59:10 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ void	check_map_valid(char *file, t_solong *data)
 {
 	init_data(file, data);
 	init_data_map(file, data);
+	check_rect_surround(data);
 }
 
-void	init_data(char *file, t_solong *data)
+static void	init_data(char *file, t_solong *data)
 {
 	int		fd;
 	char	*line;
@@ -40,7 +41,7 @@ void	init_data(char *file, t_solong *data)
 		exit_error("File Close Error");
 }
 
-void	init_data_map(char *file, t_solong *data)
+static void	init_data_map(char *file, t_solong *data)
 {
 	int		fd;
 	int		idx;
@@ -64,5 +65,27 @@ void	init_data_map(char *file, t_solong *data)
 		ft_strlcpy(data->map[idx], line, len + 1);
 		free(line);
 		idx++;
+	}
+}
+
+static void	check_rect_surround(t_solong *data)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < data->height)
+	{
+		if(i == 0 || i == data->height - 1)
+		{
+			j = 0;
+			while (j < data->width)
+			{
+				if (data->map[i][j] != '1')
+					exit_error("Map Error");
+				j++;
+			}
+		}
+		i++;
 	}
 }
