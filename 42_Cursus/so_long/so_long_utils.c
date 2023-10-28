@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   so_long_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 15:56:47 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/10/28 18:19:57 by yonyoo           ###   ########seoul.kr  */
+/*   Created: 2023/10/28 17:35:37 by yonyoo            #+#    #+#             */
+/*   Updated: 2023/10/28 18:20:19 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+void	check_map_file(int argc, char **argv)
 {
-	check_map_file(argc, argv);
-	return (0);
+	if (argc != 2 || ft_strncmp(argv[1] + ft_strlen(argv[1]) - 4, ".ber", 4))
+		exit_error("Invalid Map Error");
+}
+
+void	exit_error(char *str)
+{
+	ft_printf("Error: %s", str);
+	exit(0);
 }
