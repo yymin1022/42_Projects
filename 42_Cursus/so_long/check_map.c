@@ -6,18 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 18:35:21 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/10/29 03:59:10 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/10/31 02:29:17 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	check_map_valid(char *file, t_solong *data)
-{
-	init_data(file, data);
-	init_data_map(file, data);
-	check_rect_surround(data);
-}
 
 static void	init_data(char *file, t_solong *data)
 {
@@ -88,4 +81,11 @@ static void	check_rect_surround(t_solong *data)
 		}
 		i++;
 	}
+}
+
+void	check_map_valid(char *file, t_solong *data)
+{
+	init_data(file, data);
+	init_data_map(file, data);
+	check_rect_surround(data);
 }

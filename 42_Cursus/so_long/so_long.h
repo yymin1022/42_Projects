@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 16:39:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/10/28 20:06:44 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/10/31 02:27:06 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_solong
 }	t_solong;
 
 void	check_map_file(int argc, char **argv);
+void	check_map_valid(char *file, t_solong *data);
 void	exit_error(char *str);
 
 #endif
