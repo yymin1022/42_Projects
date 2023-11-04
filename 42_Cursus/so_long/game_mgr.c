@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:20:02 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/04 15:28:07 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/04 15:29:57 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ void	start_game(t_map *m)
 		exit_err("MLX Error");
 	m->player_lr = RIGHT;
 	init_image(m);
-	display_image(m);
+	show_image(m);
 	mlx_key_hook(m->win, key_hook, m);
-	mlx_hook(m->win, KEY_EXIT, 0, finish_game, OVER);
+	mlx_hook(m->win, KEY_EXIT, 0, finish_game, 0);
 	mlx_loop(m->mlx);
 }
 
 int	finish_game(int game)
 {
-	if (game == CLEAR)
+	if (game == 1)
 		ft_printf("GAME CLEAR\n");
-	else if (game == OVER)
+	else if (game == 0)
 		ft_printf("GAME OVER\n");
 	exit(EXIT_SUCCESS);
 }

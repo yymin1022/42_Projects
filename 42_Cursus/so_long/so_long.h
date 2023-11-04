@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 16:39:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/04 15:27:29 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/04 15:40:24 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,12 @@ typedef struct s_map
 void	check_valid_file(int argc, char **argv);
 void	check_valid_map(char *filename, t_map *m);
 void	check_valid_path(t_map *m);
-void	display_image(t_map *m);
 void	exit_err(char *str);
 void	init_image(t_map *m);
 void	init_is_visit(t_map *m);
-void	init_map_info(char *filename, t_map *m);
 void	init_map(char *filename, t_map *m);
+void	init_map_info(char *filename, t_map *m);
+void	show_image(t_map *m);
 void	start_game(t_map *m);
 int		finish_game(int game);
 int		key_hook(int keycode, t_map *m);

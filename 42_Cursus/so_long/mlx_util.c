@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:19:44 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/04 15:27:42 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/04 15:41:55 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@ void	init_image(t_map *m)
 
 	m->img_0 = mlx_xpm_file_to_image(m->mlx, "./res/stone.xpm", &w, &h);
 	m->img_1 = mlx_xpm_file_to_image(m->mlx, "./res/brick.xpm", &w, &h);
-	m->img_p[0][0] = mlx_xpm_file_to_image(m->mlx, "./res/steve.xpm", &w, &h);
 	m->img_c = mlx_xpm_file_to_image(m->mlx, "./res/apple.xpm", &w, &h);
 	m->img_e = mlx_xpm_file_to_image(m->mlx, "./res/goldapple.xpm", &w, &h);
-	m->img_p[1][0] = mlx_xpm_file_to_image(m->mlx, "./res/steve_left_0.xpm", &w, &h);
-	m->img_p[1][1] = mlx_xpm_file_to_image(m->mlx, "./res/steve_left_1.xpm", &w, &h);
-	m->img_p[2][0] = mlx_xpm_file_to_image(m->mlx, "./res/steve_right_0.xpm", &w, &h);
-	m->img_p[2][1] = mlx_xpm_file_to_image(m->mlx, "./res/steve_right_1.xpm", &w, &h);
-	if (!m->img_0 || !m->img_1 || !m->img_e || !m->img_c || !m->img_p[0][0])
+	m->img_p[0][0] = mlx_xpm_file_to_image(m->mlx, "./res/p.xpm", &w, &h);
+	m->img_p[1][0] = mlx_xpm_file_to_image(m->mlx, "./res/p_l0.xpm", &w, &h);
+	m->img_p[1][1] = mlx_xpm_file_to_image(m->mlx, "./res/p_l1.xpm", &w, &h);
+	m->img_p[2][0] = mlx_xpm_file_to_image(m->mlx, "./res/p_r0.xpm", &w, &h);
+	m->img_p[2][1] = mlx_xpm_file_to_image(m->mlx, "./res/p_r1.xpm", &w, &h);
+	if (!m->img_0 || !m->img_1
+		||!m->img_e || !m->img_c || !m->img_p[0][0])
 		exit_err("Image File Error");
 	i = 0;
 	while (i < 4)
@@ -35,7 +36,7 @@ void	init_image(t_map *m)
 			exit_err("Image File Error");
 }
 
-void	display_image(t_map *m)
+void	show_image(t_map *m)
 {
 	int	i;
 	int	j;
@@ -64,7 +65,7 @@ void	display_image(t_map *m)
 	}
 }
 
-void	display_movement(t_map *m)
+static void	show_moves(t_map *m)
 {
 	char	*moves;
 	char	*movements;
@@ -91,11 +92,11 @@ void	display_movement(t_map *m)
 	free(movements);
 }
 
-void	move_player(t_map *m, int x, int y)
+static void	move_player(t_map *m, int x, int y)
 {
 	if (m->map[y][x] == '1' || (m->map[y][x] == 'E' && m->c_cnt != m->c))
 		return ;
-	display_movement(m);
+	show_moves(m);
 	mlx_put_image_to_window(m->mlx, m->win, m->img_0, m->p_x * 32, m->p_y * 32);
 	if (m->map[y][x] == 'E' && m->c_cnt == m->c)
 	{

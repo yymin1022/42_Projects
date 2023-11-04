@@ -6,28 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 18:35:21 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/04 15:25:42 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/04 15:35:40 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	check_rectangular(t_map *m);
-void	check_component(t_map *m);
-void	check_pce(t_map *m);
-void	check_surrounded(t_map *m);
-
-void	check_valid_map(char *filename, t_map *m)
-{
-	init_map_info(filename, m);
-	init_map(filename, m);
-	check_rectangular(m);
-	check_component(m);
-	check_pce(m);
-	check_surrounded(m);
-}
-
-void	check_rectangular(t_map *m)
+static void	check_rectangular(t_map *m)
 {
 	int	i;
 
@@ -40,7 +25,7 @@ void	check_rectangular(t_map *m)
 	}
 }
 
-void	check_component(t_map *m)
+static void	check_component(t_map *m)
 {
 	int	i;
 	int	j;
@@ -69,7 +54,7 @@ void	check_component(t_map *m)
 	}
 }
 
-void	check_pce(t_map *m)
+static void	check_pce(t_map *m)
 {
 	if (m->p != 1)
 		exit_err("Map Error: No Start");
@@ -79,7 +64,7 @@ void	check_pce(t_map *m)
 		exit_err("Map Error: No Exit");
 }
 
-void	check_surrounded(t_map *m)
+static void	check_surrounded(t_map *m)
 {
 	int	i;
 	int	j;
@@ -101,4 +86,14 @@ void	check_surrounded(t_map *m)
 			exit_err("Map Error: Not Surrounded with Wall");
 		i++;
 	}
+}
+
+void	check_valid_map(char *filename, t_map *m)
+{
+	init_map_info(filename, m);
+	init_map(filename, m);
+	check_rectangular(m);
+	check_component(m);
+	check_pce(m);
+	check_surrounded(m);
 }
