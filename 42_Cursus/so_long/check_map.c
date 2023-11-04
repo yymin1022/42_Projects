@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 18:35:21 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/04 15:35:40 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/04 16:04:46 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void	check_pce(t_map *m)
 		exit_err("Map Error: No Exit");
 }
 
-static void	check_surrounded(t_map *m)
+static void	check_wall(t_map *m)
 {
 	int	i;
 	int	j;
@@ -95,5 +95,5 @@ void	check_valid_map(char *filename, t_map *m)
 	check_rectangular(m);
 	check_component(m);
 	check_pce(m);
-	check_surrounded(m);
+	check_wall(m);
 }
