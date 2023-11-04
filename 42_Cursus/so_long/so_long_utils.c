@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 17:35:37 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/04 15:35:00 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/04 16:20:26 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	check_valid_file(int argc, char **argv)
 		exit_err("Invalid File");
 }
 
-static void	dfs_path(t_map *m, int x, int y)
+void	dfs_path(t_map *m, int x, int y)
 {
 	if (m->map[y][x] == '1' || m->is_visit[y][x])
 		return ;
