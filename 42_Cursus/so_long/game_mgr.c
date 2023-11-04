@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:20:02 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/04 15:45:16 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/04 15:57:56 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	start_game(t_map *m)
 int	finish_game(int game)
 {
 	if (game == 1)
-		ft_printf("GAME CLEAR\n");
+		ft_printf("Game Clear !!\n");
 	else if (game == 0)
-		ft_printf("GAME OVER\n");
+		ft_printf("Game Over !!\n");
 	exit(EXIT_SUCCESS);
 }
