@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:19:25 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/04 15:55:10 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/04 21:19:52 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	init_is_visit(t_map *m)
 	i = 0;
 	while (i < m->height)
 	{
-		m->is_visit[i] = (int *)malloc(sizeof(int) * m->width);
+		m->is_visit[i] = (int *)ft_calloc(m->width, sizeof(int));
 		if (!m->is_visit[i])
 			exit_err("Memory Error");
 		i++;
