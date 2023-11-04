@@ -19,7 +19,10 @@ OBJS=$(SRCS:.c=.o)
 
 NAME=so_long
 
+
 all: $(NAME)
+
+bonus: all
 
 $(NAME): $(OBJS)
 	make -C $(DIR_LIBFT)
@@ -45,4 +48,4 @@ fclean:
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
