@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:19:44 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/04 14:19:45 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/04 15:27:42 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,21 @@ void	init_image(t_map *m)
 	int	h;
 	int	i;
 
-	m->img_0 = mlx_xpm_file_to_image(m->mlx, "./img/grass.xpm", &w, &h);
-	m->img_1 = mlx_xpm_file_to_image(m->mlx, "./img/block.xpm", &w, &h);
-	m->img_p[0][0] = mlx_xpm_file_to_image(m->mlx, "./img/mario.xpm", &w, &h);
-	m->img_c = mlx_xpm_file_to_image(m->mlx, "./img/coin.xpm", &w, &h);
-	m->img_e = mlx_xpm_file_to_image(m->mlx, "./img/flag.xpm", &w, &h);
-	m->img_p[1][0] = mlx_xpm_file_to_image(m->mlx, "./img/left0.xpm", &w, &h);
-	m->img_p[1][1] = mlx_xpm_file_to_image(m->mlx, "./img/left1.xpm", &w, &h);
-	m->img_p[1][2] = mlx_xpm_file_to_image(m->mlx, "./img/left2.xpm", &w, &h);
-	m->img_p[1][3] = mlx_xpm_file_to_image(m->mlx, "./img/left3.xpm", &w, &h);
-	m->img_p[2][0] = mlx_xpm_file_to_image(m->mlx, "./img/right0.xpm", &w, &h);
-	m->img_p[2][1] = mlx_xpm_file_to_image(m->mlx, "./img/right1.xpm", &w, &h);
-	m->img_p[2][2] = mlx_xpm_file_to_image(m->mlx, "./img/right2.xpm", &w, &h);
-	m->img_p[2][3] = mlx_xpm_file_to_image(m->mlx, "./img/right3.xpm", &w, &h);
+	m->img_0 = mlx_xpm_file_to_image(m->mlx, "./res/stone.xpm", &w, &h);
+	m->img_1 = mlx_xpm_file_to_image(m->mlx, "./res/brick.xpm", &w, &h);
+	m->img_p[0][0] = mlx_xpm_file_to_image(m->mlx, "./res/steve.xpm", &w, &h);
+	m->img_c = mlx_xpm_file_to_image(m->mlx, "./res/apple.xpm", &w, &h);
+	m->img_e = mlx_xpm_file_to_image(m->mlx, "./res/goldapple.xpm", &w, &h);
+	m->img_p[1][0] = mlx_xpm_file_to_image(m->mlx, "./res/steve_left_0.xpm", &w, &h);
+	m->img_p[1][1] = mlx_xpm_file_to_image(m->mlx, "./res/steve_left_1.xpm", &w, &h);
+	m->img_p[2][0] = mlx_xpm_file_to_image(m->mlx, "./res/steve_right_0.xpm", &w, &h);
+	m->img_p[2][1] = mlx_xpm_file_to_image(m->mlx, "./res/steve_right_1.xpm", &w, &h);
 	if (!m->img_0 || !m->img_1 || !m->img_e || !m->img_c || !m->img_p[0][0])
-		exit(EXIT_FAILURE);
+		exit_err("Image File Error");
 	i = 0;
 	while (i < 4)
 		if (!m->img_p[1][i] || !m->img_p[2][i++])
-			exit(EXIT_FAILURE);
+			exit_err("Image File Error");
 }
 
 void	display_image(t_map *m)
@@ -77,19 +73,19 @@ void	display_movement(t_map *m)
 	ft_printf("Moves: %d\n", m->movement);
 	moves = ft_itoa(m->movement - 1);
 	if (!moves)
-		exit(EXIT_FAILURE);
+		exit_err("Memory Error");
 	movements = ft_strjoin("Movements: ", moves);
 	if (!movements)
-		exit(EXIT_FAILURE);
+		exit_err("Memory Error");
 	mlx_string_put(m->mlx, m->win, 10, m->height * 32 + 15, BLACK, movements);
 	free(moves);
 	free(movements);
 	moves = ft_itoa(m->movement);
 	if (!moves)
-		exit(EXIT_FAILURE);
+		exit_err("Memory Error");
 	movements = ft_strjoin("Movements: ", moves);
 	if (!movements)
-		exit(EXIT_FAILURE);
+		exit_err("Memory Error");
 	mlx_string_put(m->mlx, m->win, 10, m->height * 32 + 15, WHITE, movements);
 	free(moves);
 	free(movements);
@@ -104,15 +100,15 @@ void	move_player(t_map *m, int x, int y)
 	if (m->map[y][x] == 'E' && m->c_cnt == m->c)
 	{
 		mlx_put_image_to_window(m->mlx, m->win, \
-			m->img_p[m->player_lr][m->movement % 4], x * 32, y * 32);
+			m->img_p[m->player_lr][m->movement % 2], x * 32, y * 32);
 		mlx_destroy_window(m->mlx, m->win);
-		exit_game(CLEAR);
+		finish_game(1);
 	}
 	else
 	{
 		mlx_put_image_to_window(m->mlx, m->win, m->img_0, x * 32, y * 32);
 		mlx_put_image_to_window(m->mlx, m->win, \
-			m->img_p[m->player_lr][m->movement % 4], x * 32, y * 32);
+			m->img_p[m->player_lr][m->movement % 2], x * 32, y * 32);
 		m->p_x = x;
 		m->p_y = y;
 		if (m->map[y][x] == 'C')
@@ -140,6 +136,6 @@ int	key_hook(int keycode, t_map *m)
 	else if (keycode == KEY_UP)
 		move_player(m, m->p_x, m->p_y - 1);
 	else if (keycode == KEY_ESC)
-		exit_game(OVER);
+		finish_game(0);
 	return (0);
 }

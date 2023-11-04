@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:19:25 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/04 14:19:27 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/04 15:22:09 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	init_map_info(char *filename, t_map *m)
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
-		exit(EXIT_FAILURE);
+		exit_err("File Error");
 	while (1)
 	{
 		line = get_next_line(fd);
@@ -38,7 +38,7 @@ void	init_map_info(char *filename, t_map *m)
 		free(line);
 	}
 	if (close(fd) < 0)
-		exit(EXIT_FAILURE);
+		exit_err("File Error");
 }
 
 void	init_map(char *filename, t_map *m)
@@ -51,7 +51,7 @@ void	init_map(char *filename, t_map *m)
 	m->map = (char **)malloc(sizeof(char *) * (m->height + 1));
 	fd = open(filename, O_RDONLY);
 	if (!m->map || fd < 0)
-		exit(EXIT_FAILURE);
+		exit_err("Memory Error");
 	i = 0;
 	while (i < m->height)
 	{
@@ -61,28 +61,28 @@ void	init_map(char *filename, t_map *m)
 			len--;
 		m->map[i] = (char *)malloc(sizeof(char) * (len + 1));
 		if (!m->map[i])
-			exit(EXIT_FAILURE);
+			exit_err("Memory Error");
 		ft_strlcpy(m->map[i++], line, len + 1);
 		free(line);
 	}
 	m->map[i] = NULL;
 	if (close(fd) < 0)
-		exit(EXIT_FAILURE);
+		exit_err("File Error");
 }
 
-void	init_visited(t_map *m)
+void	init_is_visit(t_map *m)
 {
 	int	i;
 
-	m->visited = (int **)malloc(sizeof(int *) * m->height);
-	if (!m->visited)
-		exit(EXIT_FAILURE);
+	m->is_visit = (int **)malloc(sizeof(int *) * m->height);
+	if (!m->is_visit)
+		exit_err("Memory Error");
 	i = 0;
 	while (i < m->height)
 	{
-		m->visited[i] = ft_calloc(m->width, sizeof(int));
-		if (!m->visited[i])
-			exit(EXIT_FAILURE);
+		m->is_visit[i] = ft_calloc(m->width, sizeof(int));
+		if (!m->is_visit[i])
+			exit_err("Memory Error");
 		i++;
 	}
 }

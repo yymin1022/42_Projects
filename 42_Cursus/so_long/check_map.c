@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 18:35:21 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/04 14:18:53 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/04 15:25:42 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	check_surrounded(t_map *m);
 void	check_valid_map(char *filename, t_map *m)
 {
 	init_map_info(filename, m);
-	if (m->height > 32 || m->width > 54)
-		error_exit("The map is too big.");
 	init_map(filename, m);
 	check_rectangular(m);
 	check_component(m);
@@ -37,7 +35,7 @@ void	check_rectangular(t_map *m)
 	while (i < m->height)
 	{
 		if (ft_strlen(m->map[i]) != (size_t)m->width)
-			error_exit("The map must be rectangular.");
+			exit_err("Map Error: No Rectangular Map");
 		i++;
 	}
 }
@@ -64,7 +62,7 @@ void	check_component(t_map *m)
 				m->p_y = i;
 			}
 			else if (m->map[i][j] != '0' && m->map[i][j] != '1')
-				error_exit("The map must be composed of (0, 1, C, E, P).");
+				exit_err("Map Error: Unknown Map Item");
 			j++;
 		}
 		i++;
@@ -74,11 +72,11 @@ void	check_component(t_map *m)
 void	check_pce(t_map *m)
 {
 	if (m->p != 1)
-		error_exit("The map must contain 1 starting position.");
+		exit_err("Map Error: No Start");
 	else if (!m->c)
-		error_exit("The map must contain at least 1 collectible.");
+		exit_err("Map Error: No Collectible");
 	else if (m->e != 1)
-		error_exit("The map must contain 1 exit.");
+		exit_err("Map Error: No Exit");
 }
 
 void	check_surrounded(t_map *m)
@@ -95,12 +93,12 @@ void	check_surrounded(t_map *m)
 			while (m->map[i][j])
 			{
 				if (m->map[i][j] != '1')
-					error_exit("The map must be surrounded by walls.");
+					exit_err("Map Error: Not Surrounded with Wall");
 				j++;
 			}
 		}
 		else if (m->map[i][0] != '1' || m->map[i][m->width - 1] != '1')
-			error_exit("The map must be surrounded by walls.");
+			exit_err("Map Error: Not Surrounded with Wall");
 		i++;
 	}
 }
