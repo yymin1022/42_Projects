@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 15:56:47 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/10/31 02:28:18 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/04 14:17:54 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int	main(int argc, char **argv)
 {
-	t_solong	data;
+	static t_map	m;
 
-	check_map_file(argc, argv);
-	check_map_valid(argv[1], &data);
-	return (0);
+	check_valid_file(argc, argv);
+	check_valid_map(argv[1], &m);
+	check_valid_path(&m);
+	play_game(&m);
 }
