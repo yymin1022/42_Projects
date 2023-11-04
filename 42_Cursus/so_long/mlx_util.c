@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:19:44 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/04 15:41:55 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/04 15:45:18 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ static void	move_player(t_map *m, int x, int y)
 	if (m->map[y][x] == 'E' && m->c_cnt == m->c)
 	{
 		mlx_put_image_to_window(m->mlx, m->win, \
-			m->img_p[m->player_lr][m->movement % 2], x * 32, y * 32);
+			m->img_p[m->player_dir][m->movement % 2], x * 32, y * 32);
 		mlx_destroy_window(m->mlx, m->win);
 		finish_game(1);
 	}
@@ -109,7 +109,7 @@ static void	move_player(t_map *m, int x, int y)
 	{
 		mlx_put_image_to_window(m->mlx, m->win, m->img_0, x * 32, y * 32);
 		mlx_put_image_to_window(m->mlx, m->win, \
-			m->img_p[m->player_lr][m->movement % 2], x * 32, y * 32);
+			m->img_p[m->player_dir][m->movement % 2], x * 32, y * 32);
 		m->p_x = x;
 		m->p_y = y;
 		if (m->map[y][x] == 'C')
@@ -124,12 +124,12 @@ int	key_hook(int keycode, t_map *m)
 {
 	if (keycode == KEY_LEFT)
 	{
-		m->player_lr = LEFT;
+		m->player_dir = LEFT;
 		move_player(m, m->p_x - 1, m->p_y);
 	}
 	else if (keycode == KEY_RIGHT)
 	{
-		m->player_lr = RIGHT;
+		m->player_dir = RIGHT;
 		move_player(m, m->p_x + 1, m->p_y);
 	}
 	else if (keycode == KEY_DOWN)

@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 16:39:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/04 15:40:24 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/04 15:45:14 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct s_map
 	void	*img_0;
 	void	*img_1;
 	void	*img_p[3][2];
-	int		player_lr;
+	int		player_dir;
 	void	*img_e;
 	void	*img_c;
 	int		movement;

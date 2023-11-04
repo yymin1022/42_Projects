@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:20:02 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/04 15:29:57 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/04 15:45:16 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	start_game(t_map *m)
 		m->width * 32, m->height * 32 + 25, "so_long");
 	if (!m->win)
 		exit_err("MLX Error");
-	m->player_lr = RIGHT;
+	m->player_dir = RIGHT;
 	init_image(m);
 	show_image(m);
 	mlx_key_hook(m->win, key_hook, m);
