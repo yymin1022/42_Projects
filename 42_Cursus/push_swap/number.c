@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoll.c                                         :+:      :+:    :+:   */
+/*   number.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,41 @@
 
 #include "push_swap.h"
 
-long long	ft_atoi(const char *str)
+int	get_min_idx(int *arr, int size)
+{
+	int	i;
+	int	min_idx;
+	int	min_val;
+
+	i = 0;
+	min_val = 2147483647;
+	while (i < size)
+	{
+		if (arr[i] < min_val)
+		{
+			min_idx = i;
+			min_val = arr[i];
+		}
+		i++;
+	}
+	return (min_idx);
+}
+
+int	max(int a, int b)
+{
+	if (a < b)
+		return (b);
+	return (a);
+}
+
+int	min(int a, int b)
+{
+	if (a > b)
+		return (b);
+	return (a);
+}
+
+long long	ft_atoll(const char *str)
 {
 	size_t	i;
 	int			neg_flag;
