@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   divide.c                                           :+:      :+:    :+:   */
+/*   split_stk.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 00:31:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 01:04:23 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 02:22:13 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int		*find_pivot(t_list *stk, int size)
 	return (pivot);
 }
 
-void	divide(t_list *stk_a, t_list *stk_b, int *pivot, ins size)
+void	split_stk(t_stk *stk_a, t_stk *stk_b, int *pivot, int size)
 {
 	int	i;
 

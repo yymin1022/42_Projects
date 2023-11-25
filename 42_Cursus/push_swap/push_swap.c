@@ -6,19 +6,33 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 00:26:09 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 00:59:18 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 02:23:04 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	solve_2(t_list *stk)
+static void	solve(t_stk *stk_a, t_stk *stk_b, int size)
+{
+	int	i;
+
+	i = 0;
+	split_stk(stk_a, stk_b, find_pivot(stk_a->top, size), size);
+	while (i < size - 3)
+	{
+		algo(stk_a, stk_b);
+		i++;
+	}
+	sort_finish(stk_a);
+}
+
+static void	solve2(t_stk *stk)
 {
 	if (stk->top->num > stk->top->next->num)
 		swap('a', stk);
 }
 
-void	solve_3(t_list *stk)
+void	solve3(t_stk *stk)
 {
 	int	a;
 	int	b;
@@ -38,25 +52,11 @@ void	solve_3(t_list *stk)
 		rotate('a', stk);
 	if (a < b && b > c && a < c)
 	{
-		swap('a', s);
-		rotate('a', s);
+		swap('a', stk);
+		rotate('a', stk);
 	}
 	if (a < b && b > c && a > c)
-		r_rotate('a', s);
-}
-
-static void	solve(t_list *stk_a, t_list *stk_b, int size)
-{
-	int	i;
-
-	i = 0;
-	split_stk(stk_a, stk_b, find_pivot(a->top, size), size);
-	while (i < size - 3)
-	{
-		greedy(stk_a, stk_b);
-		i++;
-	}
-	sort_finish(stk_a);
+		r_rotate('a', stk);
 }
 
 void	exit_err(char *str){
@@ -67,8 +67,8 @@ void	exit_err(char *str){
 int	main(int argc, char **argv)
 {
 	int		size;
-	t_list	stk_a;
-	t_list	stk_b;
+	t_stk	stk_a;
+	t_stk	stk_b;
 
 	stk_a.size = 0;
 	stk_b.size = 0;
@@ -77,5 +77,11 @@ int	main(int argc, char **argv)
 	size = parse_input(argc, argv, &stk_a);
 	if (size == 1)
 		exit(0);
+	else if (size == 2)
+		solve2(&stk_a);
+	else if (size == 3)
+		solve3(&stk_a);
+	else
+		solve(&stk_a, &stk_b, size);
 	return (0);
 }

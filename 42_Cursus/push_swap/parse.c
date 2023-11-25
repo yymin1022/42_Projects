@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 10:28:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/25 11:11:47 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 02:10:22 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ static void	parse_list(char *str, t_list **stk)
 	ft_lstadd_back(stk, tmp);
 }
 
-int	parse_input(int argc, char **argv, t_list *stk)
+int	parse_input(int argc, char **argv, t_stk *stk)
 {
 	int		i;
 	int		j;

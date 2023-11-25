@@ -6,13 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 01:04:51 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 01:44:59 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 02:23:17 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	calc_cnt_stk_a(t_list *stk_a, long long val)
+int	calc_cnt_stk_a(t_stk *stk_a, long long val)
 {
 	int			i;
 	int			min_i;
@@ -26,7 +26,7 @@ int	calc_cnt_stk_a(t_list *stk_a, long long val)
 	{
 		if (val < tmp->num)
 		{
-			if (tmp->num - value < min_delta)
+			if (tmp->num - val < min_delta)
 			{
 				min_delta = tmp->num - val;
 				min_i = i;
@@ -38,7 +38,7 @@ int	calc_cnt_stk_a(t_list *stk_a, long long val)
 	return (min_i);
 }
 
-static void	run_cmd(t_list *stk_a, t_list *stk_b, t_cnt cnt)
+static void	run_cmd(t_stk *stk_a, t_stk *stk_b, t_cnt cnt)
 {
 	while (cnt.total > 0)
 	{
@@ -59,7 +59,7 @@ static void	run_cmd(t_list *stk_a, t_list *stk_b, t_cnt cnt)
 	push('a', stk_a, stk_b);
 }
 
-void	algo(t_list *stk_a, t_list *stk_b)
+void	algo(t_stk *stk_a, t_stk *stk_b)
 {
 	int		i;
 	t_cnt	cnt;

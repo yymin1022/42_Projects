@@ -6,13 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 10:55:48 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/25 11:12:22 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 02:23:34 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	push(char x, t_list *stk_from, t_list *stk_to)
+int	push(char x, t_stk *stk_from, t_stk *stk_to)
 {
 	t_list	*tmp;
 
@@ -28,7 +28,7 @@ int	push(char x, t_list *stk_from, t_list *stk_to)
 	return (1);
 }
 
-int	swap(char x, t_list *stk)
+int	swap(char x, t_stk *stk)
 {
 	t_list	*tmp;
 
@@ -37,14 +37,14 @@ int	swap(char x, t_list *stk)
 			exit_err("Print Error");
 	if (stk->size < 2)
 		return (0);
-	tmp = s->top->next;
-	s->top->next = tmp->next;
-	tmp->next = s->top;
-	s->top = tmp;
+	tmp = stk->top->next;
+	stk->top->next = tmp->next;
+	tmp->next = stk->top;
+	stk->top = tmp;
 	return (1);
 }
 
-int	swap_s(t_list *stk_a, t_list *stk_b)
+int	swap_s(t_stk *stk_a, t_stk *stk_b)
 {
 	if (ft_printf("ss\n") != 3)
 		exit_err("Print Error");

@@ -6,13 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 11:03:06 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/25 11:12:39 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 02:19:43 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	rotate(char x, t_list *stk)
+int	rotate(char x, t_stk *stk)
 {
 	t_list	*tmp;
 
@@ -28,7 +28,7 @@ int	rotate(char x, t_list *stk)
 	return (1);
 }
 
-int	rotate_r(t_list *stk_a, t_list *stk_b)
+int	rotate_r(t_stk *stk_a, t_stk *stk_b)
 {
 	if (ft_printf("rr\n") != 3)
 		exit_err("Print Error");
@@ -37,7 +37,7 @@ int	rotate_r(t_list *stk_a, t_list *stk_b)
 	return (1);
 }
 
-int	r_rotate(char x, t_list *stk)
+int	r_rotate(char x, t_stk *stk)
 {
 	t_list	*tmp;
 
@@ -53,7 +53,7 @@ int	r_rotate(char x, t_list *stk)
 	return (1);
 }
 
-int	r_rotate_r(t_list *stk_a, t_list *stk_b)
+int	r_rotate_r(t_stk *stk_a, t_stk *stk_b)
 {
 	if (ft_printf("rrr\n") != 4)
 		exit_err("Print Error");
