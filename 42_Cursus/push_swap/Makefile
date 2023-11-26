@@ -3,6 +3,21 @@ CFLAGS=-Wall -Werror -Wextra
 
 DIR_PRINTF=./ft_printf
 
+BONUS_SRCS=bonus/checker.c \
+		bonus/algo.c \
+		bonus/cmd1.c \
+		bonus/cmd2.c \
+		bonus/count.c \
+		bonus/ft_lst.c \
+		bonus/ft_split.c \
+		bonus/number.c \
+		bonus/parse.c \
+		bonus/split_stk.c
+
+BONUS_OBJS=$(BONUS_SRCS:.c=.o)
+
+BONUS_NAME=checker
+
 SRCS=push_swap.c \
 		algo.c \
 		cmd1.c \
@@ -13,11 +28,18 @@ SRCS=push_swap.c \
 		number.c \
 		parse.c \
 		split_stk.c
+
 OBJS=$(SRCS:.c=.o)
 
 NAME=push_swap
 
 all: $(NAME)
+
+bonus: $(BONUS_NAME)
+
+$(BONUS_NAME): $(BONUS_OBJS)
+	make -C $(DIR_PRINTF)
+	$(CC) -o $(BONUS_NAME) $(BONUS_OBJS) -L$(DIR_PRINTF) -lftprintf
 
 $(NAME): $(OBJS)
 	make -C $(DIR_PRINTF)
@@ -28,11 +50,11 @@ $(NAME): $(OBJS)
 
 clean:
 	make -C $(DIR_PRINTF) clean
-	rm -rf $(OBJS)
+	rm -rf $(OBJS) $(BONUS_OBJS)
 
 fclean:
 	make -C $(DIR_PRINTF) fclean
-	rm -rf $(OBJS) $(NAME)
+	rm -rf $(OBJS) $(BONUS_OBJS) $(NAME) $(BONUS_NAME)
 
 re: fclean all
 
