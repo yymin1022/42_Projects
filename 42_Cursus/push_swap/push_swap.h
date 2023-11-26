@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 00:26:13 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 03:08:50 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 15:22:17 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int			min(int a, int b);
 int			parse_input(int argc, char **argv, t_stk *stk);
 long long	ft_atoll(const char *str);
 void		algo(t_stk *stk_a, t_stk *stk_b);
-void		exit_err(char *str);
+void		exit_err();
 void		ft_lstadd_back(t_list **lst, t_list *new);
 void		ft_lstadd_front(t_list **lst, t_list *new);
 void		ft_sort_int_tab(int *tab, int size);

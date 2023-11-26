@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 00:26:09 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 14:00:09 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 18:20:00 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ void	solve3(t_stk *stk)
 		swap('a', stk);
 }
 
-void	exit_err(char *str){
-	ft_printf("Error: %s\n", str);
-	exit(0);
+void	exit_err(){
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
 int	main(int argc, char **argv)
@@ -73,7 +73,7 @@ int	main(int argc, char **argv)
 	stk_a.size = 0;
 	stk_b.size = 0;
 	if (argc < 2)
-		exit_err("Invalid Argument");
+		exit_err();
 	size = parse_input(argc, argv, &stk_a);
 	if (size == 1)
 		exit(0);
@@ -83,5 +83,5 @@ int	main(int argc, char **argv)
 		solve3(&stk_a);
 	else
 		solve(&stk_a, &stk_b, size);
-	return (0);
+	exit(0);
 }

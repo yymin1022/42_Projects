@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 10:28:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 15:18:15 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 18:31:16 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,16 @@ static int	is_long(char *str)
 	int	j;
 
 	i = 0;
-	if (str[0] == '+' || str[1] == '-')
+	j = 0;
+	if (str[0] == '+')
 		i++;
+	if (str[0] == '-')
+	{
+		i++;
+		j--;
+	}
 	while (str[i] == '0')
 		i++;
-	j = 0;
 	while (str[i])
 	{
 		i++;
@@ -70,7 +75,7 @@ static int is_valid(char *str, t_list **stk){
 	if (!is_long(str))
 		return (0);
 	tmp = ft_atoll(str);
-	if (tmp > 2147483647 || tmp < -2147483648)
+	if (tmp > 2147483647 || tmp < -2147483648LL)
 		return (0);
 	if (is_dup(tmp, *stk))
 		return (0);
@@ -83,9 +88,9 @@ static void	parse_list(char *str, t_list **stk)
 
 	tmp = (t_list *)malloc(sizeof(t_list));
 	if (!tmp)
-		exit_err("Memory Error");
+		exit_err();
 	if (!is_valid(str, stk))
-		exit_err("Invalid Argument");
+		exit_err();
 	tmp->num = ft_atoll(str);
 	tmp->next = 0;
 	ft_lstadd_back(stk, tmp);
@@ -105,7 +110,7 @@ int	parse_input(int argc, char **argv, t_stk *stk)
 		arr = ft_split(argv[i], ' ');
 		arr_len(arr, &size);
 		if (!arr || size == 0)
-			exit_err("Failed to parse input");
+			exit_err();
 		j = 0;
 		while (j < size)
 		{

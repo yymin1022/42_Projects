@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 00:31:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 12:52:15 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 15:24:36 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int		*find_pivot(t_list *stk, int size)
 	arr = (int *)malloc(size * sizeof(int));
 	pivot = (int *)malloc(3 * sizeof(int));
 	if (!arr || !pivot)
-		exit_err("Memory Error");
+		exit_err();
 	i = 0;
 	while (i < size)
 	{
