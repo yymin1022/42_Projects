@@ -6,13 +6,13 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 10:55:48 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 02:23:34 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 11:57:37 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	push(char x, t_stk *stk_from, t_stk *stk_to)
+int	push(char x, t_stk *stk_to, t_stk *stk_from)
 {
 	t_list	*tmp;
 
@@ -48,7 +48,7 @@ int	swap_s(t_stk *stk_a, t_stk *stk_b)
 {
 	if (ft_printf("ss\n") != 3)
 		exit_err("Print Error");
-	swap('x', stk_a);
-	swap('x', stk_b);
+	swap('s', stk_a);
+	swap('s', stk_b);
 	return (1);
 }

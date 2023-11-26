@@ -11,8 +11,8 @@ SRCS=push_swap.c \
 		ft_lst.c \
 		ft_split.c \
 		number.c \
-		parse.c
-		split_stk.c \
+		parse.c \
+		split_stk.c
 OBJS=$(SRCS:.c=.o)
 
 NAME=push_swap

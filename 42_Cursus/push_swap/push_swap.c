@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 00:26:09 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 02:23:04 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 12:02:43 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void	solve(t_stk *stk_a, t_stk *stk_b, int size)
 	split_stk(stk_a, stk_b, find_pivot(stk_a->top, size), size);
 	while (i < size - 3)
 	{
+		ft_printf("asdf\n");
 		algo(stk_a, stk_b);
 		i++;
 	}

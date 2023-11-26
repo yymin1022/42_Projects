@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 00:31:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 02:22:13 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 02:58:15 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static int	is_sort(t_list *stk)
 		prev = tmp->num;
 		tmp = tmp->next;
 	}
+	return (1);
 }
 
 void	ft_sort_int_tab(int *tab, int size)
@@ -65,10 +66,10 @@ int		*find_pivot(t_list *stk, int size)
 	if (!arr || !pivot)
 		exit_err("Memory Error");
 	i = 0;
-	whiel (i < size)
+	while (i < size)
 	{
 		arr[i] = stk->num;
-		stk = stk->num;
+		stk = stk->next;
 		i++;
 	}
 	i = 0;
@@ -104,6 +105,6 @@ void	split_stk(t_stk *stk_a, t_stk *stk_b, int *pivot, int size)
 		else
 			rotate('a', stk_a);
 	}
-	solve_3(stk_a);
+	solve3(stk_a);
 	free(pivot);
 }
