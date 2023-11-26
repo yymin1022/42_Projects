@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 10:28:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 11:52:06 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 15:18:15 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ static int is_valid(char *str, t_list **stk){
 	i = 0;
 	if (str[0] == '+' || str[0] == '-')
 		i++;
+	if (!str[i])
+		return (0);
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
