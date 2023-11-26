@@ -28,15 +28,15 @@ static void	run_cmd(t_stk *stk_a, t_stk *stk_b, char *cmd)
 	free(cmd);
 }
 
-static int	is_sort(t_stk *stk, int size)
+static int	is_sort(t_stk *stk_a, t_stk *stk_b)
 {
 	int		prev;
 	t_list	*tmp;
 
-	if (stk->size != size)
+	if (stk_b->size != 0)
 		return (0);
-	prev = stk->top->num;
-	tmp = stk->top->next;
+	prev = stk_a->top->num;
+	tmp = stk_a->top->next;
 	while (tmp)
 	{
 		if (prev > tmp->num)
@@ -60,12 +60,12 @@ int	main(int argc, char **argv)
 		exit_err();
 	size = parse_input(argc, argv, &stk_a);
 	cmd = get_next_line(0);
-	while (cmd && cmd[0] != '\n')
+	while (cmd)
 	{
 		run_cmd(&stk_a, &stk_b, cmd);
 		cmd = get_next_line(0);
 	}
-	if (is_sort(&stk_a, size))
+	if (is_sort(&stk_a, &stk_b))
 	{
 		if (ft_printf("OK\n") != 3)
 			exit_err();
