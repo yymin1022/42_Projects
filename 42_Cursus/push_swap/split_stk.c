@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 00:31:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 15:24:36 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 18:41:20 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_sort_int_tab(int *tab, int size)
 	}
 }
 
-int		*find_pivot(t_list *stk, int size)
+int	*find_pivot(t_list *stk, int size)
 {
 	int	i;
 	int	*arr;

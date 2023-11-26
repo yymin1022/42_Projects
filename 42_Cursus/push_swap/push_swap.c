@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 00:26:09 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 18:20:00 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 18:40:10 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ void	solve3(t_stk *stk)
 		swap('a', stk);
 }
 
-void	exit_err(){
+void	exit_err(void)
+{
 	write(2, "Error\n", 6);
 	exit(1);
 }

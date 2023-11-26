@@ -6,16 +6,16 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 00:26:13 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 15:22:17 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 18:40:41 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include <stdlib.h>
-#include <unistd.h>
-#include "ft_printf/ft_printf.h"
+# include <stdlib.h>
+# include <unistd.h>
+# include "ft_printf/ft_printf.h"
 
 typedef struct s_cnt
 {
@@ -56,7 +56,8 @@ int			min(int a, int b);
 int			parse_input(int argc, char **argv, t_stk *stk);
 long long	ft_atoll(const char *str);
 void		algo(t_stk *stk_a, t_stk *stk_b);
-void		exit_err();
+void		arr_len(char **arr, int *size);
+void		exit_err(void);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 void		ft_lstadd_front(t_list **lst, t_list *new);
 void		ft_sort_int_tab(int *tab, int size);

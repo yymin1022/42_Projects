@@ -48,8 +48,8 @@ int	min(int a, int b)
 
 long long	ft_atoll(const char *str)
 {
-	size_t	i;
 	int			neg_flag;
+	size_t		i;
 	long long	res;
 
 	i = 0;

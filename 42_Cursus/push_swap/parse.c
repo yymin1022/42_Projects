@@ -6,21 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 10:28:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 18:31:16 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 18:39:12 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	arr_len(char **arr, int *size)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i])
-		i++;
-	*size = i;
-}
 
 static int	is_dup(int num, t_list *stk)
 {
@@ -57,7 +47,8 @@ static int	is_long(char *str)
 	return (j < 11);
 }
 
-static int is_valid(char *str, t_list **stk){
+static int	is_valid(char *str, t_list **stk)
+{
 	int			i;
 	long long	tmp;
 

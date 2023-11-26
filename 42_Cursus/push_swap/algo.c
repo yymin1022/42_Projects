@@ -6,11 +6,21 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 01:04:51 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 02:23:17 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 18:39:24 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	arr_len(char **arr, int *size)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+		i++;
+	*size = i;
+}
 
 int	calc_cnt_stk_a(t_stk *stk_a, long long val)
 {
