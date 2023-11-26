@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:12:05 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 03:07:00 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 15:13:37 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static char	*ft_get_str(char const *str, char c, size_t *orig_idx)
 		len++;
 	tmp = (char *)malloc(sizeof(char) * (len + 1));
 	if (!tmp)
-		return (0);
+		exit_err("Memory Error");
 	idx = 0;
 	while (idx < len)
 	{
@@ -52,20 +52,6 @@ static char	*ft_get_str(char const *str, char c, size_t *orig_idx)
 	}
 	*(tmp + idx) = '\0';
 	return (tmp);
-}
-
-static char	**free_mem(char **res)
-{
-	size_t	idx;
-
-	idx = 0;
-	while (*(res + idx))
-	{
-		free(*(res + idx));
-		idx++;
-	}
-	free(res);
-	return (0);
 }
 
 char	**ft_split(char const *str, char c)
@@ -78,7 +64,7 @@ char	**ft_split(char const *str, char c)
 	result_cnt = ft_get_str_cnt(str, c);
 	result = (char **)malloc(sizeof(char *) * (result_cnt + 1));
 	if (!result)
-		return (0);
+		exit_err("Memory Error");
 	idx = 0;
 	result_idx = 0;
 	while (result_cnt > 0 && *(str + idx))
@@ -89,7 +75,7 @@ char	**ft_split(char const *str, char c)
 		{
 			*(result + result_idx) = ft_get_str(str + idx, c, &idx);
 			if (!*(result + result_idx))
-				return (free_mem(result));
+				exit_err("Memory Error");
 			result_idx++;
 		}
 	}

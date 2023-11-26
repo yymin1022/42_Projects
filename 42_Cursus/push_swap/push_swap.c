@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 00:26:09 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 12:02:43 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 14:00:09 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ static void	solve(t_stk *stk_a, t_stk *stk_b, int size)
 	split_stk(stk_a, stk_b, find_pivot(stk_a->top, size), size);
 	while (i < size - 3)
 	{
-		ft_printf("asdf\n");
 		algo(stk_a, stk_b);
 		i++;
 	}
@@ -42,22 +41,22 @@ void	solve3(t_stk *stk)
 	a = stk->top->num;
 	b = stk->top->next->num;
 	c = stk->top->next->next->num;
-	if (a > b && b < c && a < c)
-		swap('a', stk);
-	if (a > b && b > c && a > c)
+	if (a > b && b > c)
 	{
 		swap('a', stk);
 		r_rotate('a', stk);
 	}
-	if (a > b && b < c && a > c)
+	if (a > c && c > b)
 		rotate('a', stk);
-	if (a < b && b > c && a < c)
+	if (b > a && a > c)
+		r_rotate('a', stk);
+	if (b > c && c > a)
 	{
 		swap('a', stk);
 		rotate('a', stk);
 	}
-	if (a < b && b > c && a > c)
-		r_rotate('a', stk);
+	if (c > a && a > b)
+		swap('a', stk);
 }
 
 void	exit_err(char *str){

@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 00:31:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/26 02:58:15 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/11/26 12:52:15 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	split_stk(t_stk *stk_a, t_stk *stk_b, int *pivot, int size)
 			i++;
 		}
 		else
-			rotate('b', stk_b);
+			rotate('a', stk_a);
 	}
 	while (stk_a->size > 3)
 	{
