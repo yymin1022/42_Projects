@@ -4,15 +4,14 @@ CFLAGS=-Wall -Werror -Wextra
 DIR_PRINTF=./ft_printf
 
 BONUS_SRCS=bonus/checker.c \
-		bonus/algo.c \
 		bonus/cmd1.c \
 		bonus/cmd2.c \
-		bonus/count.c \
 		bonus/ft_lst.c \
 		bonus/ft_split.c \
 		bonus/number.c \
 		bonus/parse.c \
-		bonus/split_stk.c
+		bonus/get_next_line/get_next_line_bonus.c \
+		bonus/get_next_line/get_next_line_utils.c
 
 BONUS_OBJS=$(BONUS_SRCS:.c=.o)
 

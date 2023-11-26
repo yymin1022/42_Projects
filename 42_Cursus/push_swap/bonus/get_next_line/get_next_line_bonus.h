@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   number.c                                         :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 13:58:07 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/11/25 10:51:31 by yonyoo           ###   ########seoul.kr  */
+/*   Created: 2023/08/05 20:13:23 by yonyoo            #+#    #+#             */
+/*   Updated: 2023/11/27 02:56:35 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+# ifndef OPEN_MAX_GNL
+#  define OPEN_MAX_GNL 49152
+# endif
+# include <stdlib.h>
+# include <unistd.h>
 
-long long	ft_atoll(const char *str)
-{
-	int			neg_flag;
-	size_t		i;
-	long long	res;
+char	*get_next_line(int fd);
+void	*ft_free(char **target);
+char	*ft_strdup(char *s1);
+char	*ft_strjoin(char **s1, char *s2);
+ssize_t	ft_strlen(char *s);
 
-	i = 0;
-	while (str[i] && ((str[i] >= 9 && str[i] <= 13)
-			|| (str[i] == 32)))
-		i++;
-	neg_flag = 1;
-	if (str[i] == '-')
-		neg_flag = -1;
-	i += (str[i] == '+' || str[i] == '-');
-	res = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = res * 10 + str[i] - '0';
-		i++;
-	}
-	return (res * neg_flag);
-}
+#endif
