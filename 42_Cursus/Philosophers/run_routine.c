@@ -6,32 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:30:23 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/24 06:31:39 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/24 06:49:06 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosopher.h"
-
-void	*dining_routines(void *data)
-{
-	t_philo	*philo;
-
-	philo = (t_philo *)data;
-	if (philo->table->time_must_eat == 0)
-		return (NULL);
-	set_last_meal_prop(philo, philo->table->start_dining);
-	if (philo->table->nbr_philo == 1)
-		return (lonely_philo(philo));
-	if (philo->id % 2 != 0)
-		keep_thinking(philo, false);
-	while (has_dinner_finish(philo->table) == false)
-	{
-		keep_eating(philo);
-		keep_sleeping(philo);
-		keep_thinking(philo, true);
-	}
-	return (NULL);
-}
 
 static void	keep_sleeping(t_philo *philo)
 {
@@ -69,5 +48,26 @@ static void	*lonely_philo(t_philo *philo)
 	log_status(philo, S_LEFT_FORK);
 	thread_sleep(philo->table, philo->table->time_to_die);
 	log_status(philo, S_DEAD);
+	return (NULL);
+}
+
+void	*dining_routines(void *data)
+{
+	t_philo	*philo;
+
+	philo = (t_philo *)data;
+	if (philo->table->time_must_eat == 0)
+		return (NULL);
+	set_last_meal_prop(philo, philo->table->start_dining);
+	if (philo->table->nbr_philo == 1)
+		return (lonely_philo(philo));
+	if (philo->id % 2 != 0)
+		keep_thinking(philo, false);
+	while (has_dinner_finish(philo->table) == false)
+	{
+		keep_eating(philo);
+		keep_sleeping(philo);
+		keep_thinking(philo, true);
+	}
 	return (NULL);
 }

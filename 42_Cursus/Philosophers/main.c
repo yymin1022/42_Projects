@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 23:26:59 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/24 06:34:06 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/24 06:44:22 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ static bool	start_dining(t_table *table)
 	{
 		if (pthread_create(&table->philo[i]->thread_philo, NULL,
 				&dining_routines, table->philo[i]) != 0)
-			return (error_msg_null(ERR_THREAD, table));
+			return (error_msg_null("Thread Creation Failed", table));
 		i++;
 	}
 	if (table->nbr_philo > 1)
 	{
 		if (pthread_create(&table->thread_table, NULL, &finish_routines_reached,
 				table) != 0)
-			return (error_msg_null(ERR_THREAD, table));
+			return (error_msg_null("Thread Creation Failed", table));
 	}
 	return (true);
 }

@@ -6,36 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:29:51 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/24 06:33:35 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/24 06:48:50 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosopher.h"
-
-void	*error_msg_null(char *str, t_table *table)
-{
-	if (table)
-		free_table(table);
-	printf("%s", str);
-	return (NULL);
-}
-
-void	log_status(t_philo *philo, t_state status)
-{
-	if (has_dinner_finish(philo->table) == true)
-		return ;
-	pthread_mutex_lock(&philo->table->log_lock);
-	if (PRETTY == 1)
-	{
-		printf(parse_format_pretty(status), get_time_ms(
-				philo->table->start_dining), philo->id + 1,
-			parse_status(status));
-	}
-	else
-		printf("%i %ld %s\n", get_time_ms(philo->table->start_dining),
-			philo->id + 1, parse_status(status));
-	pthread_mutex_unlock(&philo->table->log_lock);
-}
 
 static char	*parse_format_pretty(t_state status)
 {
@@ -69,6 +44,31 @@ static char	*parse_status(t_state status)
 		return ("died");
 	else
 		return ("");
+}
+
+void	*error_msg_null(char *str, t_table *table)
+{
+	if (table)
+		free_table(table);
+	printf("%s", str);
+	return (NULL);
+}
+
+void	log_status(t_philo *philo, t_state status)
+{
+	if (has_dinner_finish(philo->table) == true)
+		return ;
+	pthread_mutex_lock(&philo->table->log_lock);
+	if (PRETTY == 1)
+	{
+		printf(parse_format_pretty(status), get_time_ms(
+				philo->table->start_dining), philo->id + 1,
+			parse_status(status));
+	}
+	else
+		printf("%i %ld %s\n", get_time_ms(philo->table->start_dining),
+			philo->id + 1, parse_status(status));
+	pthread_mutex_unlock(&philo->table->log_lock);
 }
 
 void	header_pretty(void)

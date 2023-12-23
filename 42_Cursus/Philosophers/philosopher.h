@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:34:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/24 06:39:00 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/24 06:48:33 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@
 # include <stdbool.h>
 # include <limits.h>
 # include <sys/time.h>
+
+# ifndef PRETTY
+#  define PRETTY 0
+# endif
+
 
 typedef enum e_fork
 {

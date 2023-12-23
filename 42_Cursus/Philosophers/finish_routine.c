@@ -6,28 +6,11 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:31:07 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/24 06:31:23 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/24 06:47:10 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosopher.h"
-
-void	*finish_routines_reached(void *data)
-{
-	t_table			*table;
-
-	table = (t_table *)data;
-	if (table->time_must_eat == 0)
-		return (NULL);
-	set_dinner_end_prop(table, false);
-	while (true)
-	{
-		if (dinner_finished_reached(table) == true)
-			return (NULL);
-		usleep(1000);
-	}
-	return (NULL);
-}
 
 static bool	kill_philo(t_philo *philo)
 {
@@ -65,4 +48,21 @@ static bool	dinner_finished_reached(t_table *table)
 		return (true);
 	}
 	return (false);
+}
+
+void	*finish_routines_reached(void *data)
+{
+	t_table			*table;
+
+	table = (t_table *)data;
+	if (table->time_must_eat == 0)
+		return (NULL);
+	set_dinner_end_prop(table, false);
+	while (true)
+	{
+		if (dinner_finished_reached(table) == true)
+			return (NULL);
+		usleep(1000);
+	}
+	return (NULL);
 }
