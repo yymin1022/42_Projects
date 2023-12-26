@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:31:07 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/24 06:47:10 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 02:35:10 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static bool	kill_philo(t_philo *philo)
 {
-	if ((datetime_now() - philo->last_meal) >= philo->table->time_to_die)
+	if ((get_datetime() - philo->last_meal) >= philo->table->time_to_die)
 	{
-		log_status(philo, S_DEAD);
+		print_status(philo, S_DEAD);
 		set_dinner_end_prop(philo->table, true);
 		pthread_mutex_unlock(&philo->general_meal_lock);
 		return (true);

@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:32:05 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/24 06:46:26 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 02:34:10 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static bool	is_valid_input(int argc, char **argv)
 			printf("Error: Invalid Parameter");
 			return (false);
 		}
-		value = ft_ato_long(argv[i]);
+		value = ft_atol(argv[i]);
 		if (value < 0 || value > LONG_MAX)
 		{
 			printf("Error: Invalid Parameter");

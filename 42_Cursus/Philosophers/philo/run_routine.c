@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:30:23 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/24 06:49:06 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 02:35:07 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 static void	keep_sleeping(t_philo *philo)
 {
-	log_status(philo, S_SLEEPING);
+	print_status(philo, S_SLEEPING);
 	thread_sleep(philo->table, philo->table->time_to_sleep);
 }
 
 static void	keep_eating(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->table->fork_lock[philo->fork[F_LEFT]]);
-	log_status(philo, S_LEFT_FORK);
+	print_status(philo, S_LEFT_FORK);
 	pthread_mutex_lock(&philo->table->fork_lock[philo->fork[F_RIGHT]]);
-	log_status(philo, S_RIGHT_FORK);
-	log_status(philo, S_EATING);
-	set_last_meal_prop(philo, datetime_now());
+	print_status(philo, S_RIGHT_FORK);
+	print_status(philo, S_EATING);
+	set_last_meal_prop(philo, get_datetime());
 	thread_sleep(philo->table, philo->table->time_to_eat);
 	if (has_dinner_finish(philo->table) == false)
 		increment_times_eat_prop(philo);
@@ -39,15 +39,15 @@ static void	keep_thinking(t_philo *philo, bool log)
 
 	time_thinking = handle_thinking_time(philo);
 	if (log == true)
-		log_status(philo, S_THINKING);
+		print_status(philo, S_THINKING);
 	thread_sleep(philo->table, time_thinking);
 }
 
 static void	*lonely_philo(t_philo *philo)
 {
-	log_status(philo, S_LEFT_FORK);
+	print_status(philo, S_LEFT_FORK);
 	thread_sleep(philo->table, philo->table->time_to_die);
-	log_status(philo, S_DEAD);
+	print_status(philo, S_DEAD);
 	return (NULL);
 }
 

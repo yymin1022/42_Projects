@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:28:06 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/27 02:28:05 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 02:35:04 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,15 +89,15 @@ t_table	*init_table(int argc, char **argv)
 	table = malloc(sizeof(t_table));
 	if (!table)
 		return (print_error("Memory Allocation Error", NULL));
-	table->nbr_philo = ft_ato_long(argv[1]);
-	table->time_to_die = ft_ato_long(argv[2]);
-	table->time_to_eat = ft_ato_long(argv[3]);
-	table->time_to_sleep = ft_ato_long(argv[4]);
+	table->nbr_philo = ft_atol(argv[1]);
+	table->time_to_die = ft_atol(argv[2]);
+	table->time_to_eat = ft_atol(argv[3]);
+	table->time_to_sleep = ft_atol(argv[4]);
 	table->time_must_eat = -1;
 	if (argc == 6)
-		table->time_must_eat = ft_ato_long(argv[5]);
+		table->time_must_eat = ft_atol(argv[5]);
 	table->dinner_end = false;
-	table->start_dining = datetime_now();
+	table->start_dining = get_datetime();
 	if (init_philo(table) == false || table->philo == NULL)
 		return (NULL);
 	if (init_mutex(table) == false || is_param_valid(table) == false)

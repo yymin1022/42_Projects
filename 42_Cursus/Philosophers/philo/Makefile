@@ -10,7 +10,7 @@ SRCS = main.c \
 		init.c utils_print.c \
 		utils_mutex.c \
 		run_routine.c \
-		time.c
+		utils_time.c
 OBJS	= $(SRCS:.c=.o)
 
 all: $(NAME)

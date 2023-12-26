@@ -6,15 +6,29 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:33:11 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/24 06:33:19 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 02:33:38 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosopher.h"
 
-static int	ft_isspace(int c);
+bool	ft_isdigit(int c)
+{
+	bool	result;
 
-long	ft_ato_long(const char *str)
+	result = (c >= '0' && c <= '9');
+	return (result);
+}
+
+static int	ft_isspace(int c)
+{
+	if (c == ' ' || c == '\t' || c == '\n' || c == '\r'
+		|| c == '\v' || c == '\f')
+		return (c);
+	return (0);
+}
+
+long	ft_atol(const char *str)
 {
 	unsigned long long	num;
 	int					neg;
@@ -38,25 +52,4 @@ long	ft_ato_long(const char *str)
 		i++;
 	}
 	return (num * neg);
-}
-
-bool	ft_isdigit(int c)
-{
-	bool	result;
-
-	result = (c >= '0' && c <= '9');
-	return (result);
-}
-
-/**
- * @brief Verify spaces and spacial char
- * @param c param to verify
- * @return int. (0) if it's OK
- */
-static int	ft_isspace(int c)
-{
-	if (c == ' ' || c == '\t' || c == '\n' || c == '\r'
-		|| c == '\v' || c == '\f')
-		return (c);
-	return (0);
 }

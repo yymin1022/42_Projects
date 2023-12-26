@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:34:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/27 02:27:59 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 02:35:59 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef enum e_fork
 	F_LEFT = 0,
 	F_RIGHT = 1
 }	t_fork;
+
 typedef enum e_state
 {
 	S_EATING,
@@ -48,7 +49,7 @@ typedef struct s_philo
 	t_table			*table;
 	pthread_t		thread_philo;
 	pthread_mutex_t	general_meal_lock;
-}				t_philo;
+}	t_philo;
 
 typedef struct s_table
 {
@@ -64,22 +65,21 @@ typedef struct s_table
 	pthread_mutex_t	dinner_end_lock;
 	pthread_mutex_t	*fork_lock;
 	pthread_mutex_t	log_lock;
-}				t_table;
+}	t_table;
 
 bool	ft_isdigit(int c);
 bool	has_dinner_finish(t_table *table);
 bool	is_param_valid(t_table *table);
 bool	is_valid_args(int argc, char **argv);
-int		datetime_now(void);
-int		get_time_ms(int start_dining);
-long	ft_ato_long(const char *str);
+int		get_datetime(void);
+long	ft_atol(const char *str);
 long	handle_thinking_time(t_philo *philo);
 void	*dining_routines(void *data);
-void	*print_error(char *str, t_table *table);
 void	*finish_routines_reached(void *data);
 void	*free_table(t_table *table);
+void	*print_error(char *str, t_table *table);
 void	increment_times_eat_prop(t_philo *philo);
-void	log_status(t_philo *philo, t_state status);
+void	print_status(t_philo *philo, t_state status);
 void	set_dinner_end_prop(t_table *table, bool value);
 void	set_last_meal_prop(t_philo *philo, time_t value);
 void	thread_sleep(t_table *table, time_t duration);
