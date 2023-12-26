@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:34:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/27 02:26:27 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 02:27:59 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int		get_time_ms(int start_dining);
 long	ft_ato_long(const char *str);
 long	handle_thinking_time(t_philo *philo);
 void	*dining_routines(void *data);
-void	*error_msg_null(char *str, t_table *table);
+void	*print_error(char *str, t_table *table);
 void	*finish_routines_reached(void *data);
 void	*free_table(t_table *table);
 void	increment_times_eat_prop(t_philo *philo);

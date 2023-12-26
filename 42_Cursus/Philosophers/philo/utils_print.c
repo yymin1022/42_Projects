@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:29:51 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/27 02:27:00 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 02:27:33 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static char	*parse_status(t_state status)
 		return ("");
 }
 
-void	*error_msg_null(char *str, t_table *table)
+void	*print_error(char *str, t_table *table)
 {
 	if (table)
 		free_table(table);

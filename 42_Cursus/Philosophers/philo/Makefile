@@ -7,8 +7,8 @@ SRCS = main.c \
 		cleanup.c \
 		finish_routine.c \
 		ft_atol.c \
-		init.c print.c \
-		mutex_util.c \
+		init.c utils_print.c \
+		utils_mutex.c \
 		run_routine.c \
 		time.c
 OBJS	= $(SRCS:.c=.o)
