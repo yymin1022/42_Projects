@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:28:06 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/27 02:35:04 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 02:39:50 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ t_table	*init_table(int argc, char **argv)
 	table->start_dining = get_datetime();
 	if (init_philo(table) == false || table->philo == NULL)
 		return (NULL);
-	if (init_mutex(table) == false || is_param_valid(table) == false)
+	if (init_mutex(table) == false || is_valid_args_value(table) == false)
 		return (NULL);
 	return (table);
 }

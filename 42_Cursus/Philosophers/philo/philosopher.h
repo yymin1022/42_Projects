@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:34:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/27 02:35:59 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 02:39:56 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ typedef struct s_table
 
 bool	ft_isdigit(int c);
 bool	has_dinner_finish(t_table *table);
-bool	is_param_valid(t_table *table);
+bool	is_valid_args_value(t_table *table);
 bool	is_valid_args(int argc, char **argv);
 int		get_datetime(void);
 long	ft_atol(const char *str);
