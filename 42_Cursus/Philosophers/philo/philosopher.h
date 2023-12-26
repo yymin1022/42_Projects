@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:34:12 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/24 06:48:33 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 02:26:27 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@
 # include <stdbool.h>
 # include <limits.h>
 # include <sys/time.h>
-
-# ifndef PRETTY
-#  define PRETTY 0
-# endif
-
 
 typedef enum e_fork
 {
@@ -83,7 +78,6 @@ void	*dining_routines(void *data);
 void	*error_msg_null(char *str, t_table *table);
 void	*finish_routines_reached(void *data);
 void	*free_table(t_table *table);
-void	header_pretty(void);
 void	increment_times_eat_prop(t_philo *philo);
 void	log_status(t_philo *philo, t_state status);
 void	set_dinner_end_prop(t_table *table, bool value);

@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 23:26:59 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/24 06:44:22 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 02:26:30 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static bool	start_dining(t_table *table)
 {
 	int	i;
 
-	header_pretty();
 	i = 0;
 	while (i < table->nbr_philo)
 	{
