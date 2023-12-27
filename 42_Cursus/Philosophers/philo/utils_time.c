@@ -29,7 +29,7 @@ void	thread_sleep(t_table *table, time_t duration)
 	{
 		if (has_dinner_finish(table))
 			break ;
-		usleep(100);
+		usleep(10);
 	}
 }
 

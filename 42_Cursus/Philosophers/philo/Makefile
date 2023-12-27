@@ -1,5 +1,5 @@
-CC = gcc -pthread
-CFLAGS = -g -Wall -Werror -Wextra -fsanitize=thread -g
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra
 
 NAME = philo
 SRCS = main.c \
