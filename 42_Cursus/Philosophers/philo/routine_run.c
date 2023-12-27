@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:30:23 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/27 16:00:05 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 16:29:24 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static void	keep_sleeping(t_philo *philo)
 {
 	print_status(philo, S_SLEEPING);
 	thread_sleep(philo->table, philo->table->time_to_sleep);
-	usleep(200);
 }
 
 static void	keep_eating(t_philo *philo)
@@ -59,6 +58,9 @@ void	*dining_routines(void *data)
 	philo = (t_philo *)data;
 	if (philo->table->time_must_eat == 0)
 		return (NULL);
+	if (philo->id % 2 == 1 || (philo->table->nbr_philo % 2 == 1
+		&& philo->id == philo->table->nbr_philo))
+		usleep(philo->table->time_to_eat * 200);
 	set_last_meal_prop(philo, philo->table->start_dining);
 	if (philo->table->nbr_philo == 1)
 		return (lonely_philo(philo));
