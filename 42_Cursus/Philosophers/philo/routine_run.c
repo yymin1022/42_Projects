@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   run_routine.c                                      :+:      :+:    :+:   */
+/*   routine_run.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:30:23 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/27 02:35:07 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 16:00:05 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static void	keep_sleeping(t_philo *philo)
 {
 	print_status(philo, S_SLEEPING);
 	thread_sleep(philo->table, philo->table->time_to_sleep);
+	usleep(200);
 }
 
 static void	keep_eating(t_philo *philo)

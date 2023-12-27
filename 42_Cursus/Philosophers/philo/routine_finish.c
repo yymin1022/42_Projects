@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   finish_routine.c                                   :+:      :+:    :+:   */
+/*   routine_finish.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:31:07 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/27 02:35:10 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 16:04:36 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static bool	kill_philo(t_philo *philo)
 {
 	if ((get_datetime() - philo->last_meal) >= philo->table->time_to_die)
 	{
-		print_status(philo, S_DEAD);
 		set_dinner_end_prop(philo->table, true);
+		print_status(philo, S_DEAD);
 		pthread_mutex_unlock(&philo->general_meal_lock);
 		return (true);
 	}

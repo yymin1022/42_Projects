@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 06:29:51 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/27 02:37:01 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/27 16:04:54 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	*print_error(char *str, t_table *table)
 
 void	print_status(t_philo *philo, t_state status)
 {
-	if (has_dinner_finish(philo->table) == true)
+	if (status != S_DEAD && has_dinner_finish(philo->table) == true)
 		return ;
 	pthread_mutex_lock(&philo->table->log_lock);
 	printf("%i %ld %s\n", (int)(get_datetime() - philo->table->start_dining),

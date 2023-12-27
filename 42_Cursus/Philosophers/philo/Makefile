@@ -5,11 +5,12 @@ NAME = philo
 SRCS = main.c \
 		check_valid.c \
 		cleanup.c \
-		finish_routine.c \
 		ft_atol.c \
-		init.c utils_print.c \
+		init.c \
+		routine_finish.c \
+		routine_run.c \
 		utils_mutex.c \
-		run_routine.c \
+		utils_print.c \
 		utils_time.c
 OBJS	= $(SRCS:.c=.o)
 
