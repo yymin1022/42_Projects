@@ -12,29 +12,28 @@
 
 #include "philosopher.h"
 
-long long	ft_atoll(const char *str)
+int	check_state(t_philo **philo, t_arg *arg, int i)
 {
-	int			i;
-	long long	result;
+	long long		now;
 
-	i = 0;
-	result = 0;
-	if (str[i] == '+')
-		i++;
-	while (str[i])
+	if (arg->error == 1)
 	{
-		if (str[i] >= '0' && str[i] <= '9' && i < 13)
-			result = result * 10 + (str[i] - '0');
-		else
-			return (-1);
-		i++;
+		pthread_mutex_unlock(arg->rsc_mutex);
+		join_thread(philo, arg->philo_num + 1);
+		free_philo(philo, arg->philo_num + 1, 1);
+		return (1);
 	}
-	if (result > 2147483647 || result < 0)
-		return (-1);
-	return (result);
+	get_cur_time(&now);
+	if (now - (*philo)[i].last_eat_time > arg->time_to_die)
+	{
+		arg->dead = 1;
+		printf("%lld %d died\n", now - arg->start_time, (*philo)[i].philo_id);
+		return (2);
+	}
+	return (0);
 }
 
-long long	time_set(long long *rtn)
+long long	get_cur_time(long long *rtn)
 {
 	struct timeval	time;
 
@@ -61,10 +60,26 @@ int	free_philo(t_philo **philo, int i, int flag)
 	}
 	free(*philo);
 	return (1);
-}	
+}
 
-int	ft_error(void)
+long long	ft_atoll(const char *str)
 {
-	printf("Error\n");
-	return (1);
+	int			i;
+	long long	result;
+
+	i = 0;
+	result = 0;
+	if (str[i] == '+')
+		i++;
+	while (str[i])
+	{
+		if (str[i] >= '0' && str[i] <= '9' && i < 13)
+			result = result * 10 + (str[i] - '0');
+		else
+			return (-1);
+		i++;
+	}
+	if (result > 2147483647 || result < 0)
+		return (-1);
+	return (result);
 }

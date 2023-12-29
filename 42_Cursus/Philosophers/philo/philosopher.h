@@ -48,16 +48,20 @@ typedef struct s_philo
 }				t_philo;
 
 long long	ft_atoll(const char *str);
-long long	time_set(long long *rtn);
+long long	get_cur_time(long long *rtn);
+int			init_arg(t_arg *arg, int argc, char **argv);
+int			init_philo(t_philo **philo, t_arg *arg);
+int			init_thread(t_philo **philo, t_arg *arg);
+int			init_monitor(t_philo **philo, t_arg *arg);
 void		join_thread(t_philo **philo, int i);
 int			free_philo(t_philo **philo, int i, int flag);
-int			ft_error(void);
-void		philo_act(t_philo *philo);
-int			state_check(t_philo **philo, t_arg *arg, int i);
+int			print_error(void);
 int			print_message(t_philo *philo, char *str);
-void		psleep(t_philo *philo);
-void		eat(t_philo *philo);
-void		hold_forks(t_philo *philo, int right);
-void		release_forks(t_philo *philo, int right);
+int			check_state(t_philo **philo, t_arg *arg, int i);
+void		philo_routine_eat(t_philo *philo);
+void		philo_routine_sleep(t_philo *philo);
+void		philo_routine_start(t_philo *philo);
+void		philo_fork_hold(t_philo *philo, int right);
+void		philo_fork_release(t_philo *philo, int right);
 
 #endif

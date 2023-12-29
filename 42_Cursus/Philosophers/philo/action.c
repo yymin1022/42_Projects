@@ -12,24 +12,24 @@
 
 #include "philosopher.h"
 
-static void	cycle(t_philo *philo)
+static void	philo_routine(t_philo *philo)
 {
 	pthread_mutex_lock(philo->arg->rsc_mutex);
 	while (!philo->arg->dead && !philo->arg->error)
 	{
 		pthread_mutex_unlock(philo->arg->rsc_mutex);
-		hold_forks(philo, philo->philo_id % 2);
-		hold_forks(philo, (philo->philo_id + 1) % 2);
-		eat(philo);
-		release_forks(philo, (philo->philo_id + 1) % 2);
-		release_forks(philo, philo->philo_id % 2);
+		philo_fork_hold(philo, philo->philo_id % 2);
+		philo_fork_hold(philo, (philo->philo_id + 1) % 2);
+		philo_routine_eat(philo);
+		philo_fork_release(philo, (philo->philo_id + 1) % 2);
+		philo_fork_release(philo, philo->philo_id % 2);
 		if (philo->arg->must_eat == philo->eat_count)
 		{
 			pthread_mutex_lock(philo->arg->rsc_mutex);
 			philo->arg->done++;
 			break ;
 		}
-		psleep(philo);
+		philo_routine_sleep(philo);
 		pthread_mutex_lock(philo->arg->rsc_mutex);
 	}
 	pthread_mutex_unlock(philo->arg->rsc_mutex);
@@ -42,15 +42,15 @@ static int	philo_one(t_philo *philo)
 		pthread_mutex_lock(philo->arg->rsc_mutex);
 		print_message(philo, "is thinking");
 		pthread_mutex_unlock(philo->arg->rsc_mutex);
-		hold_forks(philo, 1);
+		philo_fork_hold(philo, 1);
 		usleep(philo->arg->time_to_die * 1000);
-		release_forks(philo, 1);
+		philo_fork_release(philo, 1);
 		return (1);
 	}
 	return (0);
 }
 
-void	philo_act(t_philo *philo)
+void	philo_routine_start(t_philo *philo)
 {
 	pthread_mutex_lock(philo->arg->start_mutex);
 	pthread_mutex_lock(philo->arg->rsc_mutex);
@@ -70,5 +70,5 @@ void	philo_act(t_philo *philo)
 		else
 			usleep(philo->arg->time_to_die * 1000);
 	}
-	cycle(philo);
+	philo_routine(philo);
 }

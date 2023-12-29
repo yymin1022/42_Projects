@@ -5,8 +5,9 @@ NAME = philo
 SRCS = main.c \
 		action.c \
 		action_util.c \
-		util_2.c \
-		util.c
+		init.c \
+		utils.c \
+		utils_print.c
 OBJS	= $(SRCS:.c=.o)
 
 all: $(NAME)

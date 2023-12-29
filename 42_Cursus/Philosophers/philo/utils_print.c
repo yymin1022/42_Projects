@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util_2.c                                             :+:      :+:    :+:   */
+/*   utils_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,25 +12,10 @@
 
 #include "philosopher.h"
 
-int	state_check(t_philo **philo, t_arg *arg, int i)
+int	print_error(void)
 {
-	long long		now;
-
-	if (arg->error == 1)
-	{
-		pthread_mutex_unlock(arg->rsc_mutex);
-		join_thread(philo, arg->philo_num + 1);
-		free_philo(philo, arg->philo_num + 1, 1);
-		return (1);
-	}
-	time_set(&now);
-	if (now - (*philo)[i].last_eat_time > arg->time_to_die)
-	{
-		arg->dead = 1;
-		printf("%lld %d died\n", now - arg->start_time, (*philo)[i].philo_id);
-		return (2);
-	}
-	return (0);
+	printf("Error\n");
+	return (1);
 }
 
 int	print_message(t_philo *philo, char *str)
@@ -39,7 +24,7 @@ int	print_message(t_philo *philo, char *str)
 
 	if (philo->arg->dead == 1 || philo->arg->error == 1)
 		return (1);
-	time_set(&now);
+	get_cur_time(&now);
 	printf("%lld %d %s\n", now - philo->arg->start_time, philo->philo_id, str);
 	return (0);
 }
