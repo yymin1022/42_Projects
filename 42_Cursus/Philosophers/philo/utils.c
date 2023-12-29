@@ -12,6 +12,15 @@
 
 #include "philosopher.h"
 
+long long	get_cur_time(long long *rtn)
+{
+	struct timeval	time;
+
+	gettimeofday(&time, NULL);
+	*rtn = (time.tv_sec * 1000LL) + (time.tv_usec / 1000LL);
+	return (*rtn);
+}
+
 int	check_state(t_philo **philo, t_arg *arg, int i)
 {
 	long long		now;
@@ -31,15 +40,6 @@ int	check_state(t_philo **philo, t_arg *arg, int i)
 		return (2);
 	}
 	return (0);
-}
-
-long long	get_cur_time(long long *rtn)
-{
-	struct timeval	time;
-
-	gettimeofday(&time, NULL);
-	*rtn = (time.tv_sec * 1000LL) + (time.tv_usec / 1000LL);
-	return (*rtn);
 }
 
 void	join_thread(t_philo **philo, int i)

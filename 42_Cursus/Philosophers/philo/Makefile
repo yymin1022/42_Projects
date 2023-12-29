@@ -3,11 +3,11 @@ CFLAGS = -Wall -Werror -Wextra
 
 NAME = philo
 SRCS = main.c \
-		action.c \
-		action_util.c \
 		init.c \
+		routine.c \
 		utils.c \
-		utils_print.c
+		utils_print.c \
+		utils_routine.c
 OBJS	= $(SRCS:.c=.o)
 
 all: $(NAME)

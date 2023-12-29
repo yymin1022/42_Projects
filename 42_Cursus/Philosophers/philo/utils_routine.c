@@ -25,6 +25,25 @@ static void	philo_check_die(t_arg *arg, long long limit, long long time, int sle
 	pthread_mutex_unlock(arg->rsc_mutex);
 }
 
+void	philo_routine_eat(t_philo *philo)
+{
+	long long		now;
+	long long		limit;
+
+	pthread_mutex_lock(philo->arg->rsc_mutex);
+	get_cur_time(&now);
+	if (print_message(philo, "is eating") == 0)
+	{
+		philo->last_eat_time = now;
+		pthread_mutex_unlock(philo->arg->rsc_mutex);
+		limit = now + philo->arg->time_to_eat;
+		philo_check_die(philo->arg, limit, now, philo->arg->philo_num);
+		philo->eat_count++;
+	}
+	else
+		pthread_mutex_unlock(philo->arg->rsc_mutex);
+}
+
 void	philo_routine_sleep(t_philo *philo)
 {
 	long long		now;
@@ -47,25 +66,6 @@ void	philo_routine_sleep(t_philo *philo)
 			philo_check_die(philo->arg, limit, now, philo->arg->time_to_sleep);
 			usleep(200);
 		}
-	}
-	else
-		pthread_mutex_unlock(philo->arg->rsc_mutex);
-}
-
-void	philo_routine_eat(t_philo *philo)
-{
-	long long		now;
-	long long		limit;
-
-	pthread_mutex_lock(philo->arg->rsc_mutex);
-	get_cur_time(&now);
-	if (print_message(philo, "is eating") == 0)
-	{
-		philo->last_eat_time = now;
-		pthread_mutex_unlock(philo->arg->rsc_mutex);
-		limit = now + philo->arg->time_to_eat;
-		philo_check_die(philo->arg, limit, now, philo->arg->philo_num);
-		philo->eat_count++;
 	}
 	else
 		pthread_mutex_unlock(philo->arg->rsc_mutex);
