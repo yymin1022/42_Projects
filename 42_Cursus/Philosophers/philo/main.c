@@ -22,8 +22,8 @@ int	main(int ac, char **av)
 	memset(&arg, 0, sizeof(t_arg));
 	arg.start_mutex = &start_mutex;
 	arg.rsc_mutex = &rsc_mutex;
-	if (init_arg(&arg, ac, av) == 1 || init_philo(&philo, &arg) == 1
-		|| init_thread(&philo, &arg) == 1 || init_monitor(&philo, &arg) == 1)
+	if (init_arg(&arg, ac, av) || init_philo(&philo, &arg)
+		|| init_thread(&philo, &arg) || init_monitor(&philo, &arg))
 		return (print_error());
 	join_thread(&philo, arg.philo_num + 1);
 	free_philo(&philo, arg.philo_num + 1, 1);

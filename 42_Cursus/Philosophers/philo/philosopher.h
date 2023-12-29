@@ -15,19 +15,19 @@
 
 # include <pthread.h>
 # include <stdio.h>
-# include <unistd.h>
-# include <string.h>
 # include <stdlib.h>
+# include <string.h>
 # include <sys/time.h>
+# include <unistd.h>
 
 typedef struct s_arg
 {
 	long long		philo_num;
+	long long		start_time;
 	long long		time_to_die;
 	long long		time_to_eat;
 	long long		time_to_sleep;
 	long long		must_eat;
-	long long		start_time;
 	long long		must_think;
 	int				dead;
 	int				error;

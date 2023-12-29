@@ -59,8 +59,9 @@ void	philo_routine_start(t_philo *philo)
 	pthread_mutex_unlock(philo->arg->start_mutex);
 	if (philo_one(philo) == 1)
 		return ;
-	if (philo->philo_id % 2 == 0 || (philo->philo_id == philo->arg->philo_num \
-	&& philo->philo_id % 2 == 1))
+	if (philo->philo_id % 2 == 0
+		|| (philo->philo_id % 2 == 1
+			&& philo->philo_id == philo->arg->philo_num))
 	{
 		pthread_mutex_lock(philo->arg->rsc_mutex);
 		print_message(philo, "is thinking");

@@ -8,7 +8,7 @@ SRCS = main.c \
 		utils.c \
 		utils_print.c \
 		utils_routine.c
-OBJS	= $(SRCS:.c=.o)
+OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
