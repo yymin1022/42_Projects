@@ -9,6 +9,8 @@ SERVER=server
 SERVER_SRC=server.c
 SERVER_OBJ=$(SERVER_SRC:.c=.o)
 
+all: $(SERVER) $(CLIENT)
+
 %.o: %.c
 	$(CC) $(CFLAGS) -c $(<) -o $(@)
 
@@ -18,7 +20,6 @@ $(CLIENT): $(CLIENT_OBJ)
 $(SERVER): $(SERVER_OBJ)
 	$(CC) $(CFLAGS) $(^) -o $(@)
 
-all: $(SERVER) $(CLIENT)
 
 clean:
 	rm -rf $(CLIENT_OBJ) $(SERVER_OBJ)
