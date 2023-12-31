@@ -6,7 +6,7 @@
 /*   By: yonyoo <yonyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 23:26:59 by yonyoo            #+#    #+#             */
-/*   Updated: 2023/12/30 14:27:23 by yonyoo           ###   ########seoul.kr  */
+/*   Updated: 2023/12/31 18:35:42 by yonyoo           ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static void	philo_routine(t_philo *philo)
 		if (philo->arg->must_eat == philo->eat_count)
 		{
 			pthread_mutex_lock(philo->arg->rsc_mutex);
+			print_message(philo, "is thinking");
 			philo->arg->done++;
 			break ;
 		}
