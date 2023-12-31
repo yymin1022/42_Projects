@@ -12,7 +12,7 @@
 
 #include "client.h"
 
-static void	check_callback(int sig)
+static void	ft_check_callback(int sig)
 {
 	if (sig == SIGUSR1)
 		ft_put_str("Server Got Message !\n");
@@ -73,7 +73,7 @@ int	main(int argc, char **argv)
 		ft_put_str("\n");
 		return (0);
 	}
-	signal(SIGUSR1, check_callback);
+	signal(SIGUSR1, ft_check_callback);
 	ft_parse_str(pid, argv[2]);
 	while (1)
 		pause();
