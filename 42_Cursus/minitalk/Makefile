@@ -4,7 +4,7 @@ CFLAGS=-Wall -Wextra -Werror
 CLIENT=client
 CLIENT_SRC_MANDATORY=client.c client_utils.c
 CLIENT_OBJ_MANDATORY=$(CLIENT_SRC_MANDATORY:.c=.o)
-CLIENT_SRC_BONUS=client_bonus.c client_utils_bonus.c
+CLIENT_SRC_BONUS=client_bonus.c client_utils.c
 CLIENT_OBJ_BONUS=$(CLIENT_SRC_BONUS:.c=.o)
 
 SERVER=server
